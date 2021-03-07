@@ -1,0 +1,43 @@
+﻿using System;
+
+namespace TirandoEspacoEmBranco
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //cria variável
+            string olaMundo = "    olá, mundo C#    ";
+            // imprime variável
+            Console.WriteLine($"Original: [{olaMundo}]");
+
+            // cria variável
+            string tiraEspacoInicio = olaMundo.TrimStart();
+            // imprime a variável
+            Console.WriteLine($"Sem o espaço inicial: [{tiraEspacoInicio}]");
+
+            // cria variável
+            string tiraEspacoFinal = olaMundo.TrimEnd();
+            // imprime a variável
+            Console.WriteLine($"Sem o espaço final: [{tiraEspacoFinal}]");
+
+            // cria a variável
+            string sayHello = "\nOlá, Mundo C#!";
+            
+            // imprime a variável
+            Console.WriteLine(sayHello);
+            Console.WriteLine("Antes do método Replace:\nOlá, Mundo C#!");
+            
+            // método Replace troca o Olá por Grande
+            sayHello = sayHello.Replace("Olá", "Grande");
+            Console.WriteLine($"Depois do método Replace: {sayHello}");
+
+            // coloca a string em maiúscula
+            Console.WriteLine($"\nUsando o método ToUpper: {sayHello.ToUpper()}");
+
+            // coloca a string em minúscula
+            Console.WriteLine($"Usando o método ToLower: {sayHello.ToLower()}");
+
+        } 
+    }
+}
