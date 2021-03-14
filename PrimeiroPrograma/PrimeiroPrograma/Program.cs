@@ -6,9 +6,8 @@ namespace PrimeiroPrograma
     {
         static void Main(string[] args)
         {
-            // imprime
-            Console.WriteLine("Olá, Mundo!");
-            Console.ReadLine(); // aguarda teclalr entra
+           Console.WriteLine("Hello World!");
+           
         }
     }
 }
