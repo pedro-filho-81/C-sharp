@@ -2,6 +2,7 @@
 
 namespace AulaDeClasse
 {
+
   class Program
     {
         static void Main(string[] args)
@@ -24,16 +25,16 @@ namespace AulaDeClasse
             // imprime os valores das propriedades da classe Estudante
             Console.WriteLine($"O aluno {aluno1.nomeDoAluno} tem a matricula número {aluno1.matricula}\n");
             
-            // chama o método Display da classe Estudante
+            // chama o método Display da classe Estudante usando o objeto
             // e atribui valores que será mostrado pelo mesmo
             aluno1.Display(321, "Cleonice Morais");
             aluno1.Display(789, "Tatiane Rainé");
 
             Console.WriteLine("Tem como funcionários:\n");
-            // chama o método inserir dados da classe Empregado
+            // chama o método inserir dados da classe Empregado usando o objeto
             func.inserirDados(002, "Maria Batista", 500f);
 
-            // cha o método mostrar dados da classe Empregado
+            //chama o método mostrar dados da classe Empregado usando o objeto
             func.mostrarDados();
 
             // fim do programa
