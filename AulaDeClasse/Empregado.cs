@@ -2,21 +2,24 @@ using System;
 
 class Empregado
 {
-    // propeiedades
+    // propeiedades publica da classe Empregado
+    //sendo pública pode ser visto pelo programa principal;
     public int identidade;
     public string nomeDoEmpregado;
     public float salario;
 
-    // método inserir dados
+    // cria o método inserir dados
+    //sendo pública pode ser visto pelo programa principal;
     public void inserirDados(int id, string nome, float sal)
     {
-        // propriedades recebem variáveis
+        // propriedades recebem parâmetros
         identidade = id;
         nomeDoEmpregado = nome;
         salario = sal;
     } // fim método
 
-    // método mostra dados
+    // cria o método mostra dados
+    //sendo pública pode ser visto pelo programa principal;
     public void mostrarDados()
     {
         Console.WriteLine($"O Funcionário {nomeDoEmpregado} ID {identidade} tem um salário de R${salario}\n");
