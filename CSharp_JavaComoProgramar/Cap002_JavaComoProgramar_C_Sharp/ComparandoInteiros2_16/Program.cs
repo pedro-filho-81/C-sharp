@@ -1,5 +1,12 @@
 ﻿using System;
-
+/*
+ 2.16 (Comparando inteiros) Escreva um aplicativo que solicite ao usuário inserir 
+    dois inteiros, obtenha dele esses números e exiba o número  maior seguido pelas 
+    palavras “is larger". Se os números forem iguais, imprima a mensagem “These 
+    numbers are equal". Utilize  as técnicas mostradas na Figura 2.15. 
+    Deitel, Paul; Deitel, Harvey. Java: como programar (p. 52). Edição do Kindle. * 
+    
+ */
 namespace ComparandoInteiros2_16
 {
     class Program
@@ -41,7 +48,6 @@ namespace ComparandoInteiros2_16
                 Console.WriteLine($"{num1} é igual a {num2}");
             }
             
-            // cabeçalho
             Console.ReadKey();
             Console.WriteLine("Hello World!");
         }
