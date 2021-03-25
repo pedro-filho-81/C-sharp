@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparandoInteiros2_16", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AritimeticaMaiorMenor2_17", "AritimeticaMaiorMenor2_17\AritimeticaMaiorMenor2_17.csproj", "{EBB57119-6DDB-45DC-99F2-CA640B5E25B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteirosMaioresMenores2_24", "InteirosMaioresMenores2_24\InteirosMaioresMenores2_24.csproj", "{6F0BBE66-AC90-4247-81DF-98A2A9BDB21A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EBB57119-6DDB-45DC-99F2-CA640B5E25B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB57119-6DDB-45DC-99F2-CA640B5E25B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB57119-6DDB-45DC-99F2-CA640B5E25B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0BBE66-AC90-4247-81DF-98A2A9BDB21A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0BBE66-AC90-4247-81DF-98A2A9BDB21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0BBE66-AC90-4247-81DF-98A2A9BDB21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0BBE66-AC90-4247-81DF-98A2A9BDB21A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
