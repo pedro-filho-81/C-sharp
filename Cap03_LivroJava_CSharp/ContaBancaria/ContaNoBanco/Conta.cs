@@ -46,7 +46,7 @@ class Conta // cria a classe Conta
         if( depositoNaConta > 0.0M)
         {
             // saldo soma mais depósito na conta
-            Saldo += depositoNaConta;
+            saldo += depositoNaConta;
         } // fim if
     } // fim método Deposito
 
@@ -59,6 +59,7 @@ class Conta // cria a classe Conta
             // o valor é subitraido do saldo
             saldo -= saques;
         } // fim if
+        
     } // fim método Retirada
     
 } // fim classe
