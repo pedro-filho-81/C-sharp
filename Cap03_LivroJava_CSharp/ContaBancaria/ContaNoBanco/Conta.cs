@@ -50,4 +50,15 @@ class Conta // cria a classe Conta
         } // fim if
     } // fim método Deposito
 
+    //cria o método para retirara dinheiro da conta
+    public void Retiradas( decimal saques )
+    {
+        // verificar se tem saldo na conta
+        if( saldo > 0.0M) // se verdade
+        {
+            // o valor é subitraido do saldo
+            saldo -= saques;
+        } // fim if
+    } // fim método Retirada
+    
 } // fim classe
