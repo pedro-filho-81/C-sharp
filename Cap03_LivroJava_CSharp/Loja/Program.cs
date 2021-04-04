@@ -1,4 +1,5 @@
 ﻿using System;
+
 /*3.12 (Classe Invoice) Crie uma classe chamada Invoice para que uma loja de 
     suprimentos de informática a utilize para representar uma  fatura de um item 
     vendido nela. Uma Invoice (fatura) deve incluir quatro partes das informações 
@@ -21,7 +22,28 @@ namespace Vendas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+            // cria o objeto da classe fatura
+            Fatura notaFiscal = new Fatura("123456", "HD", 3, 105.35M );
+
+            // COR DO FUNDO AZUL
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            // Cor das letras branca
+            Console.ForegroundColor = ConsoleColor.White;
+            // cabeçalho
+            System.Console.WriteLine("DESCRIÇÃO DA FATURA");
+            // limpa as cores
+            Console.ResetColor();
+            
+            // mostra o modêlo de nota fiscal
+            System.Console.WriteLine($"NF inicial [{notaFiscal.NumeroDaFatura}] produto [{notaFiscal.Descricao}] " +
+                $"Quantidade [{notaFiscal.Quantidade}] preço [{notaFiscal.Preco:C}]" );
+
+            // mostra o valor da fatura
+            System.Console.WriteLine($"Valor total: {notaFiscal.ValorDaFatura():C}");
+
+            Console.ReadKey(); // pausa o programa
+            Console.Clear(); // limpa a tela
+
+        } // fim main
+    } // fim classe
+} // fim namespace
