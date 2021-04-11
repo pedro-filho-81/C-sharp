@@ -22,8 +22,11 @@ namespace QuilometragemCombustivel
         {
             // cria variáveis
             int quilometrosDirigido = 0;
+            int totalDirigido = 0;
             int quantidadeDeCombustivel = 0;
+            int totalDeCombustivel = 0;
             int consumo = 0;
+            int totalConsumido = 0;
             float mediaDeConsumo = 0;
             int continuaViagem = 1;
 
@@ -32,19 +35,37 @@ namespace QuilometragemCombustivel
             {
                 // entrada de dados
                 Console.Write("Quantos Km você dirigiu? ");
+                // aguarda entrada do usuário
                 quilometrosDirigido = int.Parse(Console.ReadLine());
+                // soma a quilometragem
+                totalDirigido += quilometrosDirigido;
+
+                // entrada de combustível
                 Console.Write("Quantos litros de combustível: ");
+                // aguarda entrada do usuário
                 quantidadeDeCombustivel = int.Parse(Console.ReadLine());
+                // soma o combustível abastecido
+                totalDeCombustivel += quantidadeDeCombustivel;
 
                 // cálculos
                 consumo = quilometrosDirigido / quantidadeDeCombustivel;
+                // armazena o total do consumo de cumbustível
+                totalConsumido += consumo;
+
+                // pergunta se quer continuar a viagem
+                Console.Write("Deseja continuar a viagem [ 1-Sim / -1-Não ] ");
+                // aguarda a entrada do usuário
+                continuaViagem = int.Parse(Console.ReadLine());
                 
-            }
+            } // fim while
+
+            // mostrar resultado
+            System.Console.WriteLine($"Total da Quilometragem percorrida {totalDirigido} ");
 
 
-
-
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+            Console.WriteLine("Pressione qualquer tecla para terminar.");
+            Console.ReadKey();
+            Console.Clear();
+        } // fim main
+    } // fim classe
+} // fim namespace
