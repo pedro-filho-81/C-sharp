@@ -25,7 +25,7 @@ namespace ComissaoDeVendas
         static void Main(string[] args)
         {
             // cria constantes
-            const int pagamentoPorSemana = 200;
+            const decimal valorDaSemana = 200.0m;
             const decimal produto1 = 239.99m;
             const decimal produto2 = 129.75m;
             const decimal produto3 = 99.95m;
@@ -33,8 +33,8 @@ namespace ComissaoDeVendas
             const decimal produto5 = 525.89m;
 
             // variáveis
-            int comissaoPorVendas = 0;
-            int valorDaVendasSemanais = 0;
+            decimal porcentoDasVendas = 0m;
+            decimal valorDasVendasSemanais = 0;
             int sentinela = 1;
             decimal qtdProduto1 = 0;
             decimal qtdProduto2 = 0;
@@ -109,6 +109,22 @@ namespace ComissaoDeVendas
                 System.Console.WriteLine($"Produto3 vendeu {qtdProduto3} total {totalProduto3:C2}");
                 System.Console.WriteLine($"Produto4 vendeu {qtdProduto4} total {totalProduto4:C2}");
                 System.Console.WriteLine($"Produto5 vendeu {qtdProduto5} total {totalProduto5:C2}");
+                                
+                // cabeçalho
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.White;
+                System.Console.WriteLine("PAGAMENTO DA COMISSÃO DAS VENDAS");
+                Console.ResetColor();
+
+                // CÁLCULOS das comissões
+                valorDasVendasSemanais = totalProduto1 + totalProduto2 + totalProduto3 + totalProduto4 + totalProduto5;
+                porcentoDasVendas = ( valorDasVendasSemanais * 9 ) / 100;
+                
+                // mostrar pagamento das comissões
+                System.Console.WriteLine($"Total das vendas semanais {valorDasVendasSemanais:C}");
+                System.Console.WriteLine($"9% do total das vendas semanais {porcentoDasVendas:C}");
+                System.Console.WriteLine($"Salário da semana {valorDaSemana + porcentoDasVendas:C}");
+
                 // final
                 Console.Write( "Deseja fazer novo cálculo? [ 1=sim / -1=não ]" );
                 sentinela = int.Parse(Console.ReadLine());
