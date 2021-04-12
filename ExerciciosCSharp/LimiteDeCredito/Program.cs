@@ -41,12 +41,12 @@ namespace LimiteDeCredito
                 Console.ResetColor();
 
                 // entrada de dados
-                Console.Write("Digite o número da conta R$");
+                Console.Write("Digite o número da conta: ");
                 // aguarda entrada do usuário
                 numeroDaConta = int.Parse(Console.ReadLine());
 
                 // entrada de dados
-                Console.Write("Informe o limite inicial R$");
+                Console.Write("Você ainda tem de crédito R$");
                 // entrada do usuário
                 saldoInicial = int.Parse(Console.ReadLine());
 
@@ -56,18 +56,35 @@ namespace LimiteDeCredito
                 Console.Write("Valor das comparas atuais R$");
                 comprasAtuais = int.Parse(Console.ReadLine());
 
-                Console.Write("Informe o limite do cartão de crédito R$");
+                Console.Write("Limite do cartão de crédito R$");
                 limiteDeCredito = int.Parse(Console.ReadLine());
                              
-                sentinela = -1;
+                // cálculo saldo atual
+                int totalDasCompras = comparasAnteriores + comprasAtuais;
+                int saldoAtual =  totalDasCompras - limiteDeCredito;
+
+                // mostra saldo atual
+                Console.WriteLine($"Seu limite é de R${limiteDeCredito} valor das compras R${totalDasCompras}");
+
+                // condição
+                // se limite do cartão menor que total das compras
+                if( limiteDeCredito < totalDasCompras)
+                {
+                    // imprima
+                    System.Console.WriteLine($"Limite de credito excedido em R${totalDasCompras - limiteDeCredito}");
+                } // fim if
+                else{
+                    System.Console.WriteLine($"Você ainda tem de crédito R${limiteDeCredito - totalDasCompras}");
+                } // fim else
+
+                // pergunta
+                Console.Write("Deseja fazer novo cálculo? [ 1=sim / -1=não ]");
+                sentinela = int.Parse(Console.ReadLine());
+
+                Console.Clear();
 
             } // FIM WHILE
-            
-            Console.WriteLine("Hello World!");
 
-            Console.ReadKey(); // pausa o programa
-            Console.Clear(); // limpa a tela
-
-        }
-    }
-}
+        }// fim main
+    } // fim classe
+} // fim namespace
