@@ -30,15 +30,15 @@ namespace QuilometragemCombustivel
             float mediaDeConsumo = 0;
             int continuaViagem = 1;
 
-            // cabeçalho
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.ForegroundColor = ConsoleColor.White;
-            System.Console.WriteLine("ENTRADA DE DADOS DA VIAGEM");
-            Console.ResetColor();
-
             // enquanto a viagem continuar faça -1 encerra a viagem
             while( continuaViagem != -1 )
-            {
+            {                
+                // cabeçalho
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.White;
+                System.Console.WriteLine("ENTRADA DE DADOS DA VIAGEM");
+                Console.ResetColor();
+
                 // entrada de dados
                 Console.Write("Quantos Km você dirigiu? ");
                 // aguarda entrada do usuário
@@ -58,17 +58,29 @@ namespace QuilometragemCombustivel
                 // armazena o total do consumo de cumbustível
                 totalConsumido += consumo;
 
+                // pula linha
+                System.Console.WriteLine();
+
+                // cabeçalho
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.White;
+                System.Console.WriteLine("RELATÓRIO DA VIAGEM");
+                Console.ResetColor();
+            
+                // mostrar resultado
+                System.Console.WriteLine($"Distância percorrida {quilometrosDirigido} Km ");
+                System.Console.WriteLine($"Total de combustível abastecidos {quantidadeDeCombustivel}");
+                System.Console.WriteLine($"Total do consumo de combustivel {consumo:f2} Km/litros"); 
+                
                 // pergunta se quer continuar a viagem
                 Console.Write("Deseja continuar a viagem [ 1-Sim / -1-Não ] ");
                 // aguarda a entrada do usuário
                 continuaViagem = int.Parse(Console.ReadLine());
 
-                // pula linha
-                System.Console.WriteLine();
+                Console.Clear(); // limpa a tela
                 
             } // fim while
 
-            // CÁLCULO DA MÉDIA DE CONSUMO
             
 
             // cabeçalho
@@ -82,7 +94,7 @@ namespace QuilometragemCombustivel
             System.Console.WriteLine($"Total de combustível abastecidos {totalDeCombustivel}");
             System.Console.WriteLine($"Total do consumo de combustivel {totalConsumido:f2} Km/litros");
             System.Console.WriteLine($"Média do consumo: {mediaDeConsumo}");    
-
+           
             // final do programa
             Console.WriteLine("Pressione qualquer tecla para terminar.");
             Console.ReadKey();
