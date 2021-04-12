@@ -73,7 +73,8 @@ namespace LimiteDeCredito
                     // imprima
                     System.Console.WriteLine($"Limite de credito excedido em R${totalDasCompras - limiteDeCredito}");
                 } // fim if
-                else{
+                else{ // se não
+                    // imprima
                     System.Console.WriteLine($"Você ainda tem de crédito R${limiteDeCredito - totalDasCompras}");
                 } // fim else
 
