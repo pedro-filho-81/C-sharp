@@ -14,8 +14,11 @@ namespace LocalizaMaiorNumero
             entrada  uma série de 10 inteiros e determina e imprime o maior dos inteiros. 
             Seu programa deve utilizar pelo menos as três variáveis a seguir:  a) counter: 
             um contador para contar até 10 (isto é, monitorar quantos números foram inseridos 
-            e determinar quando todos os 10 nú-  meros foram processados).  b) number: o inteiro mais recentemente inserido pelo usuário.  c) largest: o maior número encontrado até agora. 
+            e determinar quando todos os 10 nú-  meros foram processados).  
+            b) number: o inteiro mais recentemente inserido pelo usuário.  
+            c) largest: o maior número encontrado até agora. 
             Deitel, Paul; Deitel, Harvey. Java: como programar (p. 115). Edição do Kindle. 
+            Autor: Pedro Filho 13/04/2021.
         */
         static void Main(string[] args)
         {
@@ -28,7 +31,7 @@ namespace LocalizaMaiorNumero
             while( contador < 10 )
             {
                 // entrada de dados
-                Write( "Digite um inteiro: " );
+                Write( $"Digite um {contador + 1}º inteiro: " );
                 num = int.Parse(ReadLine());
 
                 // se o contador for igual a zero
@@ -43,7 +46,7 @@ namespace LocalizaMaiorNumero
                     maior = num;
                 } // fim if
 
-                contador++; // soma 1 ao contador
+                contador++; // soma 1 ao contador até 10
 
             } // fim while
 
