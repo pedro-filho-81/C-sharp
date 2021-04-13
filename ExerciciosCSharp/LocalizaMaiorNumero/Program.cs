@@ -32,6 +32,7 @@ namespace LocalizaMaiorNumero
             {
                 // entrada de dados
                 Write( $"Digite um {contador + 1}º inteiro: " );
+                // entrada do usuário
                 num = int.Parse(ReadLine());
 
                 // se o contador for igual a zero
