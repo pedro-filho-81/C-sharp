@@ -18,6 +18,15 @@ namespace Misterio3
 
                 --linha; // subitrai 1 de linha
             }
+            int x = 5;
+            int y = 7;
+            if( x == 5)
+            if( y == 8 )
+            System.Console.WriteLine("*****");
+            else
+            System.Console.WriteLine("#####");
+            System.Console.WriteLine("$$$$$");
+            System.Console.WriteLine("69696");
 
             Console.WriteLine("Hello World!");
             Console.ReadKey();
