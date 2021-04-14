@@ -13,7 +13,10 @@ namespace Misterio3
                 while( coluna <= 10 )
                 {
                     System.Console.WriteLine(linha % 2 == 1 ? "<" : ">" );
+                    coluna++; // soma 1 a coluna
                 }
+
+                --linha; // subitrai 1 de linha
             }
 
             Console.WriteLine("Hello World!");
