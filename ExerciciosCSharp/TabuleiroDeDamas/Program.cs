@@ -16,21 +16,26 @@ namespace TabuleiroDeDamas
                 // enquanto coluna menor que 10
                 while( coluna < 10 )
                 {
-                    // imprima
+                    // imprima asterisco
                     System.Console.Write("* ");
                     coluna++; // incrementa 1
-                }
+                } // fim while coluna
 
+                // nova linha
                 System.Console.WriteLine();
 
-                if( linha % 2 == 0 )
+                // se linha for par
+                if( linha % 2 == 0 ) // se verdade
                 {
+                    // imprima um espaço vazio
                     System.Console.Write(" ");
-                }
+                } // fim if
                 
+                // incremento soma 1 a linha
                 linha++;
+                // inicializa a coluna
                 coluna = 0;
-            }
-        }
-    }
-}
+            } // fim while externo
+        } // fim main
+    } // fim classe 
+} // fim namespace
