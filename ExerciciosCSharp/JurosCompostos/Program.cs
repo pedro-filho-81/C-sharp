@@ -45,6 +45,13 @@ namespace JurosCompostos
                     montante = principal * (decimal) Math.Pow( 1.0 + taxaDeJuros, tempo );
                 } // fim for
 
+                
+                // cabeçalho
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine( "RESULTADO DO INVESTIMENTO" );
+                Console.ResetColor();
+
                 // imprime o resultado
                 System.Console.WriteLine($"Você aplicou {principal:C2}");
                 System.Console.WriteLine($"A uma taxa de {taxaDeJuros:n2}%");                
