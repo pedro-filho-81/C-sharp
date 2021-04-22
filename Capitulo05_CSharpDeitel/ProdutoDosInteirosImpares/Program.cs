@@ -15,19 +15,26 @@ namespace ProdutoDosInteirosImpares
             // cria variável
             int produto = 1;
 
+            // CABEÇALHO
+            System.Console.WriteLine("O PRODUTO DOS NÚMEROS ÍMPARES DE 1 A 15");
+            
             // loop para contar de 1 a 15
             for( int i = 1; i <= 15; i++ )
+            
                 // se i % 2 == 1 ( se i for ímpar )
                 if( i % 2 == 1 )
-
-                // calcular o valor
-                produto *= i;
-
+                {          
+                    System.Console.Write($"{i} x ");      
+                    // calcular o valor
+                    produto *= i;
+                } // fim if
+            
             // imprima o resultado    
-            Console.WriteLine( $"O produto dos ímpares de 1 a 15 é {produto}" );
+            Console.WriteLine( $"\b\b = {produto}" );
+            
             Console.ReadKey();
             Console.Clear();
             
-        }
-    }
-}
+        } // FIM MAIN
+    } // FIM CLASSE
+} // FIM NAMESPACE
