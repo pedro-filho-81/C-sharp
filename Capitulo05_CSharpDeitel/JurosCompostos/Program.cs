@@ -23,51 +23,30 @@ namespace JurosCompostos
             int i = 0;
             int sentinela = 0;
             
-
-            // limpa a tela
-            Console.Clear();
-
-            // cabeçalho
-            WriteLine("CALCULANDO JUROS COMPOSTOS" );
-
-            // Entrada de dados
-            Console.Write("Informe o valor inicial R$" );
-            valorInicial = decimal.Parse(Console.ReadLine());
-
-            Write("Informe a taxa de juros: " );
-            taxa = float.Parse(ReadLine());
-
-            Write("Informe o tempo da aplicação: " );
-            tempoAplicado = int.Parse(ReadLine());
-
-            // calcular
-            taxa /= 100;
-            valorFinal = valorInicial * (decimal) Math.Pow( 1.0 + taxa, tempoAplicado );
-            jurosRecebido = valorFinal - valorInicial;
-            
-            System.Console.WriteLine(); // pula linha
-
-            // mostra resultado
-            WriteLine($"Valor aplicado {valorInicial:C}" );
-            WriteLine($"Taxa = {taxa:f2}%" );
-            WriteLine($"Juros recebido = {jurosRecebido:C}" );
-            WriteLine($"Valor Final {valorFinal:C}");
-
-            // AQUI ESTÁ COMO O EXERCÍCIO SOLICITA
-            // CABEÇALHO
-            WriteLine("CALCULANDO JUROS COMPOSTO COM TAXA VARIÁVEL" );
-
-            // loop para a taxa de juros
-            for( i = 5; i <= 10; i++ )
+            // enquanto sentinela diferente de -1 faça
+            while( sentinela != -1 )
             {
-                // TAXA RECEBE O VALOR DE VENDAS
-                taxa = i;
+                // limpa a tela
+                Console.Clear();
+
+                // cabeçalho
+                WriteLine("CALCULANDO JUROS COMPOSTOS" );
+
+                // Entrada de dados
+                Console.Write("Informe o valor inicial R$" );
+                valorInicial = decimal.Parse(Console.ReadLine());
+
+                Write("Informe a taxa de juros: " );
+                taxa = float.Parse(ReadLine());
+
+                Write("Informe o tempo da aplicação: " );
+                tempoAplicado = int.Parse(ReadLine());
 
                 // calcular
                 taxa /= 100;
                 valorFinal = valorInicial * (decimal) Math.Pow( 1.0 + taxa, tempoAplicado );
                 jurosRecebido = valorFinal - valorInicial;
-                                
+                
                 System.Console.WriteLine(); // pula linha
 
                 // mostra resultado
@@ -76,9 +55,46 @@ namespace JurosCompostos
                 WriteLine($"Juros recebido = {jurosRecebido:C}" );
                 WriteLine($"Valor Final {valorFinal:C}");
 
-                ReadKey(); // pausa o programa
+                // AQUI ESTÁ COMO O EXERCÍCIO SOLICITA
+                // CABEÇALHO
+                WriteLine("\nCALCULANDO JUROS COMPOSTO COM TAXA VARIÁVEL" );
 
-            } // FIM FOR
+                // loop para a taxa de juros
+                for( i = 6; i <= 10; i++ )
+                {
+                    // limpa
+                    valorFinal = 0;
+                    jurosRecebido = 0;
+                
+                    // TAXA RECEBE O VALOR DE VENDAS
+                    taxa = i;
+
+                    // calcular
+                    taxa /= 100;
+                    valorFinal = valorInicial * (decimal) Math.Pow( 1.0 + taxa, tempoAplicado );
+                    jurosRecebido = valorFinal - valorInicial;
+                                    
+                    System.Console.WriteLine(); // pula linha
+
+                    // mostra resultado
+                    WriteLine($"Valor aplicado {valorInicial:C}" );
+                    WriteLine($"Taxa = {taxa:f2}%" );
+                    WriteLine($"Juros recebido = {jurosRecebido:C}" );
+                    WriteLine($"Valor Final {valorFinal:C}");
+
+                    ReadKey(); // pausa o programa
+
+                } // FIM FOR
+
+                // pergunta se deseja continuar
+                Write("Deseja calcular outro valor? [ 1 = sim / -1 = não ] " );
+                sentinela = int.Parse(ReadLine());
+
+            } // fim while
+
+            // limpa a tela
+            Clear();
+
         } // FIM MAIN
     } // FIM CLASSE
 } // FIM NAMESPACE
