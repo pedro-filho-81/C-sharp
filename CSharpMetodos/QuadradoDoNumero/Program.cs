@@ -32,13 +32,16 @@ namespace QuadradoDoNumero
                 double resp = QuadradoDeNum(i);
                 // imprime
                 WriteLine($"o quadra de {i} é {resp}");
-            } // fim loop fpr
+            } // fim loop for
+
+            ReadKey();
+            Clear();
             
         } // fim main
 
         // método Quadrado do número
         // recebe um valor no parâmetro double num
-        static double QuadradoDeNum( Double num  )
+        public static double QuadradoDeNum( Double num  )
         {
             // retorna o valor de num vezes num
             return num * num;
