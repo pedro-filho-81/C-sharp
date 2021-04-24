@@ -25,6 +25,9 @@ namespace QuadradoDoNumero
             // mosta a resposta
             Console.WriteLine($"O quadrado de {num} é {resposta:n0}");
 
+            // pula linha
+            System.Console.WriteLine();
+
             // loop para ver o quadrado de um número
             for( int i = 1; i <= 10; i++ )
             {
