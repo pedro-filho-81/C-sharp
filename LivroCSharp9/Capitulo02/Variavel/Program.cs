@@ -20,6 +20,7 @@ namespace Variavel
             WriteLine($"{nome} tem {tamanhoDoNome} letras." );
 
             dynamic outroNome = "Maria"; // atribuindo string a dynamic
+            // usando dynamic não precisa do typecast como em object
             int tamanho2 = outroNome.Length; // mostra o tamanho do outro nome
             // imprime
             WriteLine($"{outroNome} tem {tamanho2} caracteres." );
