@@ -15,10 +15,12 @@ namespace TestandoMath
             WriteLine("MÉTODO MATH");
             ResetColor();
 
+            WriteLine("Abs - Retorna o valor absoluto do número.");
             WriteLine($"Math.Abs(23.7) = {Math.Abs(23.7)}");
             WriteLine($"Math.Abs(-23.7) = {Math.Abs(-23.7)}");
             WriteLine($"Math.Abs(0.0) = {Math.Abs(0.0)}");
 
+            WriteLine("Ceiling - retorna um valor menor, maior ou igual ao número especificado.");
             WriteLine($"Math.Ceiling(9.2) = {Math.Ceiling(9.2)}");
             WriteLine($"Math.Ceiling(-9.8) = {Math.Ceiling(-9.8)}");
 
