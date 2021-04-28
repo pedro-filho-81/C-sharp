@@ -11,16 +11,25 @@ namespace VolumeDaEsfera
         {
             // cria variável
             double raioDaEsfera = 0;
+            // limpa a tela
             Clear();
+            // cabeçalho
+            BackgroundColor = ConsoleColor.DarkBlue;
+            ForegroundColor = ConsoleColor.White;
+            WriteLine("VOLUME DA ESFERA");
+            ResetColor();
 
             // entrada de dados
             Write("Digite o raio da esfera: ");
             raioDaEsfera = int.Parse(ReadLine());
-
-            // double volumeDaEsfera = Volume(raio);
             
+            // imprime resultado
             WriteLine($"O volume da esfera é {Volume(raioDaEsfera):n5}");
 
+            // fim
+            ReadKey();
+            Clear(); // limpa a tela
+            
         } // fim main
 
         // método Volume
