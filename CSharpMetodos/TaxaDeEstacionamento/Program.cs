@@ -23,26 +23,46 @@ namespace TaxaDeEstacionamento
         static void Main(string[] args)
         {
             // cria variável
-            float tempo = 0;
+            float tempo = 1;
             decimal resposta = 0M;
+            decimal contadorDosValores = 0;
+            int totalDeCarrosEstacionados = 0;
 
-            Clear(); // limpa tela
+            while( tempo > 0 )
+            {
+                Clear(); // limpa tela
 
-            // cabeçalho
-            BackgroundColor = ConsoleColor.DarkBlue;
-            ForegroundColor = ConsoleColor.White;
-            WriteLine("TAXA DE ESTACIONAMENTO");
-            ResetColor();
+                // cabeçalho
+                BackgroundColor = ConsoleColor.DarkBlue;
+                ForegroundColor = ConsoleColor.White;
+                WriteLine("TAXA DE ESTACIONAMENTO");
+                ResetColor();
 
-            // entrada de dados
-            Write("Digite o tempo que o carro ficou estacionado:" );
-            tempo = float.Parse(ReadLine());
+                // entrada de dados
+                Write("Digite o tempo que o carro ficou estacionado [ -1 = sair ]: " );
+                tempo = float.Parse(ReadLine());
+                
+                // se o tempo for maior que zero
+                if( tempo > 0 )
+                {    
+                    // resposta recebe o valor retornado do método 
+                    resposta = CalTaxaDeEstacionamento( tempo );
+                    contadorDosValores += resposta;
+                    totalDeCarrosEstacionados++;
+                    
+                    // imprime resultado
+                    Console.WriteLine($"Por {tempo}h estacionado valor a pagar { resposta:C}");
 
-            // resposta recebe o valor retornado do método 
-            resposta = CalTaxaDeEstacionamento( tempo );
+                } // fim if
+                else // se não
+                {
+                    // saia do programa
+                    break;
+                } // fim else
 
-            // imprime resuktado
-            Console.WriteLine($"Por {tempo}h estacionado valor a pagar { resposta:C}");
+            } // fim while
+            WriteLine($"{totalDeCarrosEstacionados} carros estacionados." );
+            WriteLine($"Total arrecadado {contadorDosValores:C}");
         } // fim main
 
         public static decimal CalTaxaDeEstacionamento( float tempoEstacionado ) 
