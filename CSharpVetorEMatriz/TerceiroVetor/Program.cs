@@ -7,7 +7,7 @@ namespace TerceiroVetor
         static void Main(string[] args)
         {
             // cria uma constante
-            const int TAMANHO = 10;
+            const int TAMANHO = 11;
             // cria um vetor
             int[] vetor = new int[TAMANHO];
 
