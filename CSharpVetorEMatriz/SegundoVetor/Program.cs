@@ -20,7 +20,7 @@ namespace SegundoVetor
             for( int contar = 0; contar < numeros.Length; contar++ )
             {
                 // imprima
-                WriteLine( $"numero[{contar}]{numeros[contar], 10}" );
+                WriteLine( $"numero[{contar + 1}]{numeros[contar], 10}" );
             } // fim for
 
         } // fim main
