@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace TerceiroVetor
 {
@@ -6,30 +7,25 @@ namespace TerceiroVetor
     {
         static void Main(string[] args)
         {
-            // cria uma constante
-            const int TAMANHO = 11;
-            // cria um vetor
+            // CONSTANTE INTEIRA
+            const int TAMANHO = 10;
+            // cria variável para um vetor
             int[] vetor = new int[TAMANHO];
 
-            Console.Clear(); // limpa a tela
-
-            // LOOP PARA ADICIONAR VALOR NO VETOR
-            for( int contar = 0; contar < TAMANHO; contar++ )
+            // loop para adicionar valores ao vetor
+            for( int adicionar = 0; adicionar < TAMANHO; adicionar++ )
             {
-                // vetor recebe os valores
-                vetor[contar] = contar * 2;
-            } // fim for
+                vetor[ adicionar ] = 2 + 2 * adicionar;
+            } // fim loop adicionar
 
-            // imprime cabeçalho
-            Console.WriteLine($"Vetor {"Valor", 10}");
+            WriteLine($"Índice{"Valor", 8}" );
 
-            // loop para mostrar os valores do vetor
-            for( int mostrar = 0; mostrar < TAMANHO; mostrar++ )
+            for(int mostrar = 0; mostrar < TAMANHO; mostrar++ )
             {
-                // imprime os valores do vetor
-                Console.WriteLine( $"{mostrar + 1, 3} {vetor[mostrar], 10}" );
-            } // fim for mostrar
+                WriteLine( $"   {mostrar + 1, 3} {vetor[mostrar], 5}" );
+            } // fim loop mostrar
 
+            Console.WriteLine("Hello World!");
         } // fim main
     } // fim classe
 } // fim namespace
