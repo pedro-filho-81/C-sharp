@@ -30,11 +30,13 @@ namespace QuartoVetor
             // loop mostrar valores do vetor
             for( int mostrar = 0; mostrar < TAMANHO; mostrar++ )
             {
+                // imprime
                 WriteLine( $" {mostrar + 1, 3} {vetor[ mostrar ], 5}" );
             } // fim for mostrar
 
+            // imprime
             Console.WriteLine( $"Soma = {soma}");
         } // fim main
-        
+
     } // fim classe
 } // fim namespace
