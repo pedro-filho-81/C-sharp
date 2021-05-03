@@ -11,7 +11,8 @@ namespace Histograma
 
             // limpar a tela
             Console.Clear();
-
+            
+            // cabeçalho
             Console.WriteLine($"Índice {"Valor",8} {"Histograma", 12}" );
 
             // loop para mostra o resultado
@@ -32,7 +33,6 @@ namespace Histograma
 
             } // fim for externo
 
-            Console.WriteLine("Hello World!");
         } // fim main
     } // fim classe
 } // fim namespace
