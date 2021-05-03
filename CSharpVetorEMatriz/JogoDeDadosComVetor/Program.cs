@@ -12,6 +12,9 @@ namespace JogoDeDadosComVetor
             // cria o objeto para Random
             Random numeroAleatorio = new Random();
            
+            // cria variável
+            double soma = 0;
+
             // limpa a tela
             Console.Clear();
 
@@ -21,13 +24,18 @@ namespace JogoDeDadosComVetor
                 ++frequencia[ numeroAleatorio.Next( 1, 7 ) ];
             } // fim for
 
+            // loop for
+            for( int i = 1; i < 7; i++ )
+                soma += frequencia[ i ];
+
             // cabeçalho
-            Console.WriteLine("Face\tFrequência" );
+            Console.WriteLine("Índice\tFrequência\tPercentual" );
 
             // loop para
             for( int lado = 1; lado < frequencia.Length; lado++ )
             {
-                Console.WriteLine($"{lado, 2} {frequencia[lado], 15}" );
+                // imprime resultado
+                Console.WriteLine($"{lado, 2} {frequencia[lado], 15} {frequencia[lado] / soma * 100, 13:N3}%" );
             } // fim for
             
         } // fim main
