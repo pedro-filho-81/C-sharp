@@ -49,9 +49,8 @@ namespace AnalisandoUmaPesquisa
             {
                 // imprime o índice e a frequência que apreceram
                 Console.WriteLine($"{i, 3} {frequencia[ i ], 10}" );
-            }
+            } // fim for
 
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+        }// fim main
+    } // fim classe
+} // fim namespace
