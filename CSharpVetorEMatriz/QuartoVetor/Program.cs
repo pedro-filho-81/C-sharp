@@ -11,6 +11,7 @@ namespace QuartoVetor
             const int TAMANHO = 10;
             //  cria o vetor
             int[] vetor = new int[TAMANHO];
+            // cria variável
             int soma = 0;
 
             // limpa tela
@@ -21,10 +22,12 @@ namespace QuartoVetor
             {
                 // adiciona valores ao vetor
                 vetor[ adicionar ] = adicionar * 3;
+                // soma os valores do vetor
                 soma += vetor[ adicionar ];
 
             } // fim for adicionar
 
+            // cabeçalho
             WriteLine( $"Índice {"Valor", 5}" );
 
             // loop mostrar valores do vetor
