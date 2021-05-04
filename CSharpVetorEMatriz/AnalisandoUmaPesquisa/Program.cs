@@ -25,7 +25,7 @@ namespace AnalisandoUmaPesquisa
             for( int i = 0; i < 40; i++ )
             {
                 // vetor resposta recebe 40 números aleatórios entre 1 e 10 inclusive
-                resposta[ i ] = numeroAleatorio.Next(1, 11);
+                resposta[ i ] = numeroAleatorio.Next(1, 12);
                 
                 // pula uma linha se i for multiplo de 10
                 if( i % 10 == 0)
@@ -45,9 +45,9 @@ namespace AnalisandoUmaPesquisa
                     // verifica quantas vezes um valor no vetor resposta apareceu
                     ++frequencia[ resposta[ j ] ];
                 } // fim try
-                catch(IndexOutOfRangeException ex)
+                catch(IndexOutOfRangeException)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine($"\nO índice está fora dos limites da matriz.");
                     Console.WriteLine($"resposta[{j}] = {resposta[j]}\n");
                 }
 
