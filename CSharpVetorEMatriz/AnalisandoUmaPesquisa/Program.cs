@@ -21,16 +21,18 @@ namespace AnalisandoUmaPesquisa
             // cabeçalho
             Console.Write( "  VALORES RESPOSTA DA PESQUISA" );
                         
-            // loop para adicionar valores ao vetor
+            // loop para adicionar 40 valores ao vetor resposta
             for( int i = 0; i < 40; i++ )
             {
-                // vetor resposta recebe números aleatórios entre 1 e 10 inclusive
+                // vetor resposta recebe 40 números aleatórios entre 1 e 10 inclusive
                 resposta[ i ] = numeroAleatorio.Next(1, 11);
                 
+                // pula uma linha se i for multiplo de 10
                 if( i % 10 == 0)
+                    // pula uma linha
                     System.Console.WriteLine();
                 
-                // imprima
+                // imprima o valor do vetor da posição i
                 Console.Write($"{resposta[ i ], 3}" );
 
             } // fim for adicionar
@@ -38,16 +40,26 @@ namespace AnalisandoUmaPesquisa
             // loop para contar a frequêcia dos valores de resposta
             for( int j = 0; j < resposta.Length; j++ )
             {
-                // verifica quantas vezes um valor no vetor resposta apareceu
-                ++frequencia[ resposta[ j ] ];
+                try
+                {
+                    // verifica quantas vezes um valor no vetor resposta apareceu
+                    ++frequencia[ resposta[ j ] ];
+                } // fim try
+                catch(IndexOutOfRangeException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine($"resposta[{j}] = {resposta[j]}\n");
+                }
+
             }
 
+            // cabeçalho da tabela
             Console.WriteLine( "\n  Valor\tApareceu" );
 
             // loop para mostrar os valores
             for( int i = 1; i < frequencia.Length; i++ )
             {
-                // imprime o índice e a frequência que apreceram
+                // imprime o índice e a frequência que o valor aprece
                 Console.WriteLine($"{i, 3} {frequencia[ i ], 10}" );
             } // fim for
 
