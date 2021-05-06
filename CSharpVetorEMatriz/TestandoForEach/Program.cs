@@ -16,11 +16,14 @@ namespace TestandoForEach
             // loop para mostrar os valores
             foreach( int numero in array )
             {
-                WriteLine($"{numero}");
+                // imprime os valores
+                Write($"{numero} ");
+                // soma os valores
                 soma += numero;
-            }
+            } // fim for
 
-            Console.WriteLine($"Soma = {soma} Hello World!");
-        }
-    }
-}
+            // imprime a soma dos valores
+            Console.WriteLine($"\nSoma = {soma} Hello World!");
+        } // fim main
+    } // fim classe
+} // fim namespace
