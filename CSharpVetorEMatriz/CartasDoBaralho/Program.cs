@@ -12,21 +12,25 @@ namespace CartasDoBaralho
 
             // cria variável objeto para a classe baralho de cartas
             var meuBaralhoDeCartas = new ClasseBaralhoDeCartas();
+            
             // objeto meu baralho de carta chama o método embaralhar
             meuBaralhoDeCartas.Embaralhar();
 
-            // loop para
+            // loop para mostrar as cartas embaralhadas
             for( var i = 0; i < 52; i++ )
             {
+                // imprime
                 Write($" {meuBaralhoDeCartas.DistribuirUmaCarta(), 20} " );
 
+                // quando for multiplos de 4
                 if( (i + 1) % 4 == 0 )
                 {
+                    // pule uma linha
                     System.Console.WriteLine();
                 } // fim if
+
             } // fim for
 
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fim namespace
