@@ -126,20 +126,26 @@ class GradeBook
         // loop verifica a frequencia
         for( int contar = 0; contar < frequencia.Length; contar++ )
         {
+            // se contar igual a 10
             if( contar == 10 )
             {
+                // imprima cem
                 Write("100");
             }
-            else
+            else // se não
             {
+                // imprime a tabela das notas
                 Write($"{contar * 10:D2} - {contar *10 + 9:D2}: " );
-            }
+            } // fim else
 
+            // loop para criar grafico de asterisco 
             for( var inicio = 0; inicio < frequencia[ contar ]; inicio++ )
             {
+                // imprima asterisco
                 Write("*");
-            }
+            } // fim loop
 
+            // pule uma linha
             WriteLine();
 
         } // fim for
@@ -149,13 +155,16 @@ class GradeBook
     // cria método saída das notas
     public void MostrarNotas()
     {
+        // imprima cabeçalho
         WriteLine("AS NOTAS SÃO");
 
+        // loope para mostra as notas
         for( var estudantes = 0; estudantes < notasDosAlunos.Length; estudantes++ )
         {
+            // imprima
             WriteLine($"Estudante{estudantes + 1, 2} : {notasDosAlunos[ estudantes ], 3 }" );
         } // fim for
 
     } // fim método
-
+    
 } // fim classe
