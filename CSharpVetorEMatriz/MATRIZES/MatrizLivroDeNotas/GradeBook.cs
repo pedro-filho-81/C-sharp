@@ -29,14 +29,14 @@ class GradeBook
     public void ProcessandoAsNotas()
     {
         // chama o método mostrar as notas
-        //MostrarAsNotas();
+        MostrarAsNotas();
 
         // chama os métodos MaiorNota e Menor Nota
-        WriteLine($"A maior nota é {MaiorNota()}" );
+        WriteLine($"\nA maior nota é {MaiorNota()}" );
         WriteLine($"A menor nota é {MenorNota()}\n" );
 
         // chama o método mostrar gráfico de barras
-        //MostrarGraficoDeBarras();
+        GraficoDeBarras();
         
     } // fim método processando notas
 
@@ -91,7 +91,7 @@ class GradeBook
     {
         // cria a variável contar notas que recebe
         // o tamanho da matriz notas dos alunos
-        var contarNotas = notasDosAlunos[0,0];
+        var contarNotas = notasDosAlunos.GetLength(1);
 
         // cria a variável total que é inicializada com zero
         var total = 0.0;
@@ -105,8 +105,83 @@ class GradeBook
 
         // retorne
         return total / contarNotas;
-    } // fim método
+    } // fim método média das notas
 
+    // cria o método gráfico de barras
+    public void GraficoDeBarras()
+    {
+        // CABEÇALHO
+        WriteLine("GRÁFICO DE BARRAS" );
 
+        // armazena a frequência de notas em cada 10 notas
+        var frequencia = new int[11];
+
+        // para cada nota em notas dos alunos, incrementa a frequência apropriada
+        foreach( var nota in notasDosAlunos )
+        {
+            ++frequencia[ nota / 10 ];
+        } // fim para cada nota
+
+        for( int contar = 0; contar < frequencia.Length; contar++ )
+        {
+            // se contar igual a 10
+            if( contar == 10 )
+            {
+                // imprima cem
+                Write("  100:" );
+
+            } // fim if contar
+            // se não
+            else
+            {
+                // imprima
+                Write($"{contar * 10:D2}-{contar * 10 + 9:D2}: " );
+            } // fim else
+
+            // loop para a barra de asterisco
+            for( int inicio = 0; inicio < frequencia[contar]; inicio++ )
+            {
+                // imprima
+                Write( "*" );
+            } // fim for asterisco
+
+            WriteLine(); // pula uma linha
+        } // fim função gráfico de barras
+
+    } // fim método grafico de barras
+
+    public void MostrarAsNotas()
+    {
+        // cabeçalho
+        WriteLine("As notas são:\n");
+        Write("            ");
+
+        //loop para coluna
+        for (int teste = 0; teste < notasDosAlunos.GetLength(1); teste++)
+        {
+            // imprima
+            Write($"{" Teste", 11}{teste + 1}");
+
+        } // fim for test
+
+        WriteLine( $"{"Média", 9}" );
+
+        // cria linha e coluna de teste representando matriz notas dos estudantes
+        for( var estudantes = 0; estudantes < notasDosAlunos.GetLength(0); estudantes++ )
+        {
+            Write( $"Estudante{estudantes + 1, 2}" );
+
+            // loop para mostrar estudantes e a nota
+            for( var nota = 0; nota < notasDosAlunos.GetLength(1); nota++ )
+            {
+                // imprima
+                Write($"{notasDosAlunos[estudantes, nota], 12}" );
+            } // fim for nota
+
+            // chama o método média dos alunos para calcular a média
+            WriteLine($"{MediaDasNotas(estudantes), 10:N}");
+            
+        } // fim for estudante
+    } // fim método gráfico de barras
 
 } // fim classe GradeBook
