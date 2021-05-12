@@ -3,7 +3,7 @@ using static  System.Console;
 
 class GradeBook
 {
-    // cria a matriz retangular grade
+    // cria a matriz retangular notas dos alunos
     private int[ , ] notasDosAlunos;
     
     // cria a propriedade nome do curso
