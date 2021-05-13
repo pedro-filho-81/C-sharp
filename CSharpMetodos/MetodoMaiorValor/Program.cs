@@ -17,9 +17,12 @@ namespace MetodoMaiorValor
             // método maior valor recebe os argumentos n1, n2, n3
             double resposta = MaiorValor(numero1, numero2, numero3 );
 
+            double resposta2 = MaiorValor2(numero1, numero2, numero3 );
+
             // mostra o resultado
             Console.WriteLine($"O maior valor é {resposta}");
-            Console.ReadKey();
+            Console.WriteLine($"O maior valor ( usando o método MaiorValor2 ) é {resposta2}");
+                Console.ReadKey();
             Console.Clear();
 
         } // fim main
@@ -38,6 +41,12 @@ namespace MetodoMaiorValor
 
             return maiorValor; // retorne o maior valor
         } // fim método
+
+        // cria o método maior valor 2
+        static double MaiorValor2( double x, double y, double z )
+        {
+            return Math.Max(x, Math.Max( y, z ) );
+        } // fim método maior valor 2
 
     } // fim classe
 } // fim namespace

@@ -15,7 +15,7 @@ namespace NumerosAleatorios
             // cabeçalho
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.White;
-            System.Console.WriteLine("NÚMEROS ALEATÓRIOS");
+            System.Console.WriteLine("GERAR 20 NÚMEROS ALEATÓRIOS");
             Console.ResetColor();
 
             // loop para imprimir 20 números aleatórios
