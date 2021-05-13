@@ -146,6 +146,7 @@ class GradeBook
             } // fim for asterisco
 
             WriteLine(); // pula uma linha
+            
         } // fim função gráfico de barras
 
     } // fim método grafico de barras
