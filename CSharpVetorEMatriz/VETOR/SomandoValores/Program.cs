@@ -15,6 +15,7 @@ namespace SomandoValores
 
             // cria uma aconstante
             const int TAMANHO = 10;
+
             // cria uma variável
             int total = 0;
 
