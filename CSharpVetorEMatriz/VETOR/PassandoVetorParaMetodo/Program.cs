@@ -42,7 +42,7 @@ namespace PassandoVetorParaMetodo
 
             // imprime
             WriteLine("\nEfeitos da passagem de um elemento do vetor." +
-                    $"\nO elemento da posição vetorOriginal[3] \ndepois da modificação é: {vetorOriginal[3]}" );
+                    $"\nO elemento da posição vetorOriginal[3] \nantes da modificação é: {vetorOriginal[3]}" );
  
             // chama o método modificar elemento e atribui o vetorOriginal[3]
             ModificarElementos( vetorOriginal[3] );
