@@ -13,6 +13,9 @@ namespace PesquisaLinear
             // CRIA constante
             const int TAMANHO = 10;
 
+            // cria a variável 
+            int resposta = 0;
+
             // cria vetor
             int[] vetor = new int[ TAMANHO ];
             
@@ -23,10 +26,13 @@ namespace PesquisaLinear
             WriteLine("Vetor Original" );
 
             // chama o método mostrar valores
-            MostrarValores( vetor );
+            MostrarValores( vetor ); // mostra os vetor original
 
             // chama método pesquisar valor
-            PesquisaLinear( vetor, 10 );
+            resposta = PesquisaLinear( vetor, 10 );
+
+            // chama o método Resposta da pesquisa
+            RespostaDaPesquisa( resposta );
 
             // cabeçalho
             WriteLine( "VETOR ORGANIZADO" );
@@ -38,7 +44,10 @@ namespace PesquisaLinear
             MostrarValores( vetor );
 
             // chama o método pesquisar
-            PesquisaLinear( vetor, 20 );
+            resposta = PesquisaLinear( vetor, 20 );
+
+            // chama a função resposta da pesquisa
+            RespostaDaPesquisa( resposta );
 
             Console.WriteLine("Hello!");
         } // fim main
@@ -101,14 +110,34 @@ namespace PesquisaLinear
         // CRIA uma pesquisa linear
         static int PesquisaLinear( int[] vetor, int pesquisa )
         {
+            // loop para posição do vetor
             for( int i  = 0; i < vetor.Length; i++ )
             {
-                if( pesquisa == vetor )
+                // se o valor for encontrado
+                if( vetor[ i ] == pesquisa )
                 {
-                    
-                }
-            }
+                    // retorne a posição em que ele se encontra
+                    return i;                   
+                } // fim if
+            } // fim for
+
+            // retorne -1 se o valor não for encontrado
+            return -1;
+
         } // fim método pesquisar
+
+        // cria método resposta da pesquisa
+        static void RespostaDaPesquisa( int resposta )
+        {            
+            // Se resposta diferente de -1
+            if( resposta != -1 )
+                // imprima
+                WriteLine( $"Valor encontrado na posição {resposta}" );
+            // se não
+            else
+                // imprima
+                WriteLine( "Valor não encontrado" );
+        } // fim função resposta da pesquisa
 
     } // fim classe
 } // fim namespace
