@@ -12,44 +12,42 @@ namespace PesquisaLinear
 
             // CRIA constante
             const int TAMANHO = 10;
+            
+            // cria vetor
+            int[] vetor = new int[ TAMANHO ];
 
             // cria a variável 
             int resposta = 0;
+            int chave = 0;
 
-            // cria vetor
-            int[] vetor = new int[ TAMANHO ];
-            
             // CHAMA o método adicionar valores
             AdicionarValores(vetor, TAMANHO );
-
+                        
             // cabeçalho
             WriteLine("Vetor Original" );
-
             // chama o método mostrar valores
             MostrarValores( vetor ); // mostra os vetor original
+                        
+            // cabeçalho
+            WriteLine( "VETOR ORGANIZADO" );
+            // chama o método organizar valor
+            OrganizarValores(vetor, TAMANHO );
+            // chama o método mostrar valores
+            MostrarValores( vetor ); // mostra os vetor original
+            
+            // entrada de dados
+            Write( "Digite um número entre 1 e 50: " );
+            chave = int.Parse(ReadLine());
+
+            // chama a função imprime cabeçalho
+            ImprimaCabecalho( vetor );
 
             // chama método pesquisar valor
-            resposta = PesquisaLinear( vetor, 10 );
+            resposta = PesquisaBinaria(vetor, chave, 0, TAMANHO - 1 );
 
             // chama o método Resposta da pesquisa
             RespostaDaPesquisa( resposta );
 
-            // cabeçalho
-            WriteLine( "VETOR ORGANIZADO" );
-
-            // chama o método organizar valor
-            OrganizarValores(vetor, TAMANHO );
-
-            // chama o método mostrar valores
-            MostrarValores( vetor );
-
-            // chama o método pesquisar
-            resposta = PesquisaLinear( vetor, 20 );
-
-            // chama a função resposta da pesquisa
-            RespostaDaPesquisa( resposta );
-
-            Console.WriteLine("Hello!");
         } // fim main
 
         // cria método adicionar valores
@@ -150,20 +148,26 @@ namespace PesquisaLinear
             {
                 meio = ( inicio + fim ) / 2;
 
+                // imprime uma linha
+                ImprimaLinha(vetor, inicio, meio, fim );
+
                 // se pesquisa igual ao vetor
                 if( pesquisa == vetor[ meio ] )
                 {
                     // retorne a posição encontrada
                     return meio;
                 } // fim if
+
                 else if( pesquisa < vetor[ meio ] )
                 {
                     fim = meio - 1;
                 } // fim else if
+                
                 else
                 {
                     inicio = meio + 1;
                 } // fim else                
+
             } // fim wile
 
             // retorne -1 se o valor não encontrado
@@ -171,14 +175,52 @@ namespace PesquisaLinear
 
         } // fim do método pesauisa binária
 
+        // cria método imprime cabeçalho
+        static void ImprimaCabecalho( int[] vetor )
+        {
+            // cria variável
+            int contador;
+
+            WriteLine("Subscrito\n" );
+
+            // loop cabeçalho para coluna
+            for( contador = 0; contador < vetor.Length; contador++ )
+            {
+                Write( $"{ contador, 3} " );
+            } // fim for
+
+            WriteLine(); // pula linha
+
+            // loop para linha de comando
+            for( contador = 1; contador <= 4 * vetor.Length; contador++ )
+            {
+                Write( "_" );
+            } // fim for
+
+            WriteLine(); // pula linha
+
+        } // fim método imprime cabeçalho
+
         // cria método imprima linha
         static void ImprimaLinha( int[] vetor, int inicio, int meio, int fim )
         {
-            for( int i = 0; i < vetor.Length; i++ )
+            // cria variável
+            int contador;
+
+            // loop pelo vetor
+            for( contador = 0; contador < vetor.Length; contador++ )
             {
-                if( i < inicio || i > fim )
-                    WriteLine("          ");
+                if( contador < inicio || contador > fim )
+                    Write(" ");
+                else if( contador == meio )
+                    Write( $"{vetor[ contador ], 3}*" );
+                else
+                    Write( $"{vetor[ contador ], 3}" );
+
             } // fim for
+
+            WriteLine(); // pula uma linha
+
         } // fim método imprima linha
         
     } // fim classe
