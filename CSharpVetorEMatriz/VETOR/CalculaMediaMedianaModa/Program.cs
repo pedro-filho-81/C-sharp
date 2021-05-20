@@ -22,6 +22,12 @@ namespace CalculaMediaMedianaModa
 
             // chama a função adicionar valores
             AdicionarValores( resposta, TAMANHO );
+
+            // cabeçalho
+            Write("Vetor original:" );
+            // chama o método mostrar valores
+            MostrarValores( resposta, TAMANHO );
+
             Console.WriteLine("Hello World!");
         } // fim main
 
@@ -38,5 +44,23 @@ namespace CalculaMediaMedianaModa
                 vetor[ i ] = numeros.Next( 1, 10 );
             } // fim for
         } // fim método atribuir valores
+
+        // cria método mostrar valores
+        static void MostrarValores( int[] vetor, int tamanho )
+        {
+            // loop para mostrar valores do vetor
+            for( int numero = 0; numero < tamanho; numero++ )
+            {
+                // se número multiplo de 10
+                if( numero % 10 == 0 )
+                    // pula uma linha
+                    WriteLine();
+
+                // imprima o elemento do vetor da posição número
+                Write( $"{vetor[ numero ]} " );
+
+            } // fim for
+        } // fim método
+
     } // fim classe
 } // fim name space
