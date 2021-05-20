@@ -20,13 +20,23 @@ namespace CalculaMediaMedianaModa
             // CRIA o vetor para números
             int[] resposta = new int[ TAMANHO ];
 
+            // cria o vetor frequência
+            int[] frequencia = new int[ 10 ];
+
             // chama a função adicionar valores
             AdicionarValores( resposta, TAMANHO );
 
             // cabeçalho
             Write("Vetor original:" );
+
             // chama o método mostrar valores
             MostrarValores( resposta, TAMANHO );
+
+            // chama o método média
+            CalcularMedia( resposta, TAMANHO );
+
+            // chama o método mediana
+            CalcularMediana( resposta, TAMANHO );
 
             Console.WriteLine("Hello World!");
         } // fim main
@@ -60,7 +70,73 @@ namespace CalculaMediaMedianaModa
                 Write( $"{vetor[ numero ]} " );
 
             } // fim for
-        } // fim método
+        } // fim mostrar valores
+
+        // cria o método calcular média
+        static void CalcularMedia( int[] vetor, int tamanho )
+        {
+            // cria variável
+            int total = 0;
+
+            // cabeçalho
+            WriteLine("\n***** MÉDIA *****" );
+
+            // loop para somar os valores do vetor
+            foreach( int numero in vetor )
+            {
+                // soma os números
+                total += numero;
+            } // fim foreach
+
+            // imprime a média
+            WriteLine($"Média: {total} / {tamanho} = {total / tamanho}" );
+        } // fim método calcular média
+
+        // cria o método calcular a meniana
+        static void CalcularMediana( int[] vetor, int tamanho )
+        {
+            // cabeçalho
+            WriteLine("\n***** MEDIANA *****" );
+
+            // chama o método ordenar vetor
+            OrdenarVetor( vetor, tamanho );
+
+            // cabeçalho
+            Write("***** VETOR ORDENADO *****" );
+
+            // chama o método mostrar valores
+            MostrarValores( vetor, tamanho );
+
+            // imprima
+            WriteLine($"\n\nA mediana é o elemento {tamanho / 2}\n" + 
+                    $"vetor ordenado de {tamanho}.\n" +
+                    $"Para essa execução, a mediana é {vetor[ tamanho / 2 ]}");
+
+        } // fim calcular mediana
+
+        // CRIA método ordenar vetor
+        static void OrdenarVetor( int[] vetor, int tamanho )
+        {
+            // cria a variável auxiliar
+            int auxiliar = 0;
+
+            // loop para contar as passadas
+            for( int passadas = 1; passadas < tamanho; passadas++ )
+            {
+                // loop para compara o número de comparações
+                for( int i = 0; i < tamanho - 1; i++ )
+                {
+                    // troca os elementos se estiverem fora da ordem
+                    if( vetor[ i ] > vetor[ i + 1 ] )
+                    {
+                        auxiliar = vetor[ i ];
+                        vetor[ i ] = vetor[ i + 1 ];
+                        vetor[ i + 1 ] = auxiliar;
+                    } // fim if
+
+                } // fim for interno
+            } // fim for passadas
+        } // fim função ordenar
 
     } // fim classe
 } // fim name space
