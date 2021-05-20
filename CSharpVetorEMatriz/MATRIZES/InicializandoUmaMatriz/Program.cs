@@ -37,8 +37,10 @@ namespace InicializandoUmaMatriz
             // loop para criar uma linha
             for( int linha = 0; linha < matriz.GetLength( 0 ); linha++ )
             {
+                // loop para coluna
                 for( int coluna = 0; coluna < matriz.GetLength( 1 ); coluna++ )
                 {
+                    // imprime a matriz
                     Write($"{matriz[ linha, coluna ]} ");
                 } // fim for coluna
                 
