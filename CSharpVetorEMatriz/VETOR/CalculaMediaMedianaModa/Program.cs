@@ -38,6 +38,9 @@ namespace CalculaMediaMedianaModa
             // chama o método mediana
             CalcularMediana( resposta, TAMANHO );
 
+            // chama método moda
+            CalcularModa( resposta, TAMANHO, frequencia );
+
             Console.WriteLine("Hello World!");
         } // fim main
 
@@ -62,7 +65,7 @@ namespace CalculaMediaMedianaModa
             for( int numero = 0; numero < tamanho; numero++ )
             {
                 // se número multiplo de 10
-                if( numero % 10 == 0 )
+                if( numero % 20 == 0 )
                     // pula uma linha
                     WriteLine();
 
@@ -110,7 +113,7 @@ namespace CalculaMediaMedianaModa
             // imprima
             WriteLine($"\n\nA mediana é o elemento {tamanho / 2}\n" + 
                     $"vetor ordenado de {tamanho}.\n" +
-                    $"Para essa execução, a mediana é {vetor[ tamanho / 2 ]}");
+                    $"Para essa execução, a mediana é {vetor[ tamanho / 2 ]}\n");
 
         } // fim calcular mediana
 
@@ -135,8 +138,64 @@ namespace CalculaMediaMedianaModa
                     } // fim if
 
                 } // fim for interno
+
             } // fim for passadas
         } // fim função ordenar
+
+        // cria método moda
+        static void CalcularModa( int[] vetor, int tamanho, int[] frequencia )
+        {
+            // cria variáveis
+            int contaElementos;
+            int j;
+            int h;
+            int maior = 0;
+            int respMaisFrequente = 0;
+
+            // cabeçalho
+            WriteLine( "\n***** Valor Modal *****" );
+
+            // loop para inicializar a frequência em zero
+            for( contaElementos = 0; contaElementos <= 0; contaElementos++ )
+            {
+                frequencia[ contaElementos ] = 0;
+
+            } // fim for conta elementos
+
+            // loop resumo da frequencia
+            for( j = 0; j < tamanho; j++ )
+            {
+                ++frequencia[ vetor[ j ] ];
+            } // fim for j
+
+            // cabeçalho
+            WriteLine( $"{"Resposta"}{"Frequência", 11}{"Histograma", 13}" );
+
+            // loop para mostra resultado
+            for( contaElementos = 1; contaElementos <= 9; contaElementos++ )
+            {
+                // mostra resultado
+                Write( $"{contaElementos, 5}{frequencia[ contaElementos ], 10}" );
+
+                // acompanha o valor da moda e o valor da maior frequência
+                if( frequencia[ contaElementos ] > maior )
+                {
+                    maior = frequencia[ contaElementos ];
+                    respMaisFrequente = contaElementos;
+                } // fim if
+
+                Write( "       " );
+
+                // loop para o histograma
+                for( h = 0; h <= frequencia[contaElementos]; h++ )
+                {
+                    Write( $"*" );
+                } // fim for histograma
+
+                WriteLine(); // pula linha
+
+            } // for externo
+        } // fim método moda
 
     } // fim classe
 } // fim name space
