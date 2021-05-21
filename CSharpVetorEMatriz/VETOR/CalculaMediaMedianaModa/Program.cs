@@ -195,6 +195,11 @@ namespace CalculaMediaMedianaModa
                 WriteLine(); // pula linha
 
             } // for externo
+
+            // imprime resultado
+            WriteLine($"A moda é o valor mais frequente.\n" +
+                    $"Para essa execução, a moda é {respMaisFrequente}, " + 
+                    $"que ocorreu {maior} vezes." );
         } // fim método moda
 
     } // fim classe
