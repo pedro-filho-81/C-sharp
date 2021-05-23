@@ -19,6 +19,9 @@ namespace PesquisaLinear
             // cria vetor
             int[] vetor = new int[ TAMANHO ];
             
+            // cabeçalho
+            WriteLine( "PESQUISA LINEAR" );
+
             // CHAMA o método adicionar valores
             AdicionarValores(vetor, TAMANHO );
 
@@ -28,6 +31,9 @@ namespace PesquisaLinear
             // chama o método mostrar valores
             MostrarValores( vetor ); // mostra os vetor original
 
+            // mostra o valor da pesquisa
+            WriteLine("Aqui pesquisa o valor => 10" );
+
             // chama método pesquisar valor
             resposta = PesquisaLinear( vetor, 10 );
 
@@ -35,13 +41,16 @@ namespace PesquisaLinear
             RespostaDaPesquisa( resposta );
 
             // cabeçalho
-            WriteLine( "VETOR ORGANIZADO" );
+            WriteLine( "\nVETOR ORGANIZADO" );
 
             // chama o método organizar valor
             OrganizarValores(vetor, TAMANHO );
 
             // chama o método mostrar valores
             MostrarValores( vetor );
+            
+            // mostra o valor da pesquisa
+            WriteLine("Aqui pesquisa o valor => 20" );
 
             // chama o método pesquisar
             resposta = PesquisaLinear( vetor, 20 );
