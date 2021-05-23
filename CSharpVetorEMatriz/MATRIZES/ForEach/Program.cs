@@ -10,7 +10,7 @@ namespace ForEach
             // limpa tela
             Clear();
 
-            // cria vetor
+            // cria variáveis
             var d1 = 10;
             var d2 = 20;
             var d3 = 30;
@@ -20,9 +20,9 @@ namespace ForEach
             WriteLine( $"d1 = {d1:f1}\nd2 = {d2:f1}\nd3 = {d3:f1}\nd4 = {d4:f1}");
 
             // imprima
-            WriteLine($"A média entre d1 e d2 é {Media(d1, d2):f1}" );
+            WriteLine( $"\nA média entre d1 e d2 é {Media(d1, d2):f1}" );
             WriteLine( $"A média entre d1, d2, d3 é {Media(d1, d2, d3):f1}" );
-            
+            WriteLine( $"A média entre d2 e d4 é {Media(d2, d4):f1}" );
 
         } // fim main
 
