@@ -32,13 +32,15 @@ namespace ForEach
             // cria variável
             var total = 0.0;
 
-            // loop para percorrer o vetor
+            // loop para percorrer o vetor números
+            // para cada número em números
             foreach( var numero in numeros )
             {
+                // some o número
                 total += numero;
             } // fim foreach
 
-            // se o vetor diferente de zero
+            // se o tamanho do vetor diferente de zero
             return numeros.Length != 0 ? total / numeros.Length:0.0;
 
         } // fim media
