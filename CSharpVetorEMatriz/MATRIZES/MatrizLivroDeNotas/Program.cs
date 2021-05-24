@@ -35,6 +35,6 @@ namespace MatrizLivroDeNotas
 
 
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fim namespace
