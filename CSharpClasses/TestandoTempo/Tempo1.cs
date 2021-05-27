@@ -1,6 +1,4 @@
 using System;
-using static System.Console;
-
 
 class Tempo1
 {
@@ -10,7 +8,7 @@ class Tempo1
     public int Segundos { get; set; }
 
     // cria método configura tempo
-    public void SetTempo( int hora, int minutos, int segundos )
+    public void TempoAtual( int hora, int minutos, int segundos )
     {
         // se tempo 
         if( (hora < 0 || hora > 24) || (minutos < 0 || minutos > 60) || (segundos < 0 || segundos > 60) )
