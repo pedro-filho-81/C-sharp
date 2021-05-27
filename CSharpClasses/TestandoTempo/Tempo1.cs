@@ -1,4 +1,6 @@
 using System;
+using static System.Console;
+
 
 class Tempo1
 {
@@ -26,7 +28,7 @@ class Tempo1
     public string FormatoHoraUniversal() =>
         $"{Hora:D2}:{Minutos:D2}:{Segundos:D2}";
 
-    // imprime a hora universao
+    // imprime a hora universal
     public override string ToString() => $"{Hora == 0 || Hora == 12} ? 12 : {Hora % 12}:" +
                                         $"{Minutos:D2}:{Segundos:D2} {(Hora < 12 ? "AM":"PM")}";    
 
