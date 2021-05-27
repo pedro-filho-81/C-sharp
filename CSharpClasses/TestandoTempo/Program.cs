@@ -28,10 +28,23 @@ namespace TestandoTempo
             WriteLine($"\nMostra a hora universal depois da chamada do método TempoAtual():" );
             WriteLine($"A hora atual é: {(hora.FormatoHoraUniversal())}" );
             WriteLine($"Padrão da hora atual: {hora.ToString()}" );
-
             // pula linha
             WriteLine();
+
+            // caso tentem configurar a hora ci=om valores inválidos
+            try
+            {
+                hora.TempoAtual(99,99,99);
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                WriteLine($"ATENÇÃO: Tenteram especificar a hora com valores inválidos.\n" );
+            }
             
+            WriteLine($"Configura a hora com valores válidos." );
+            WriteLine($"Padrão universal: {hora.FormatoHoraUniversal()}" );
+            WriteLine($"Hora padrão: {hora.ToString()}" );
+
         } // fim main
     } // fim classe
 } // fim namespace
