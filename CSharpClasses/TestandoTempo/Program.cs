@@ -38,7 +38,7 @@ namespace TestandoTempo
             }
             catch(ArgumentOutOfRangeException)
             {
-                WriteLine($"ATENÇÃO: Tenteram especificar a hora com valores inválidos.\n" );
+                WriteLine($"ATENÇÃO: Você Tentou especificar a hora com valores inválidos.\n" );
             }
             
             WriteLine($"Configura a hora com valores válidos." );
