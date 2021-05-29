@@ -45,6 +45,10 @@ namespace TestandoTempo
             WriteLine($"Padrão universal: {hora.FormatoHoraUniversal()}" );
             WriteLine($"Hora padrão: {hora.ToString()}" );
 
+            // atribuindo valor
+            hora.Hora = 7;
+            hora.Minutos = 15;
+            hora.Segundos = 30;
         } // fim main
     } // fim classe
 } // fim namespace
