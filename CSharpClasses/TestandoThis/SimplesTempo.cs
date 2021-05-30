@@ -2,7 +2,7 @@ using System;
 
 class SimplesTempo
 {
-    // cria variáveis de instancia
+    // cria variáveis de instância
     private int hora;
     private int minutos;
     private int segundos;
