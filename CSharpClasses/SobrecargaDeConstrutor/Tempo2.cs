@@ -38,7 +38,7 @@ class Tempo2
         set
         {
             // se valor maior que zero ou valor menor que 23
-            if( value > 0 || value < 23 )
+            if( value < 0 || value > 23 )
             {
                 throw new ArgumentOutOfRangeException(nameof(value), 
                             value, $"{nameof(Hora)} deve ser 0 - 23" );
@@ -62,7 +62,7 @@ class Tempo2
         set
         {
             // se valor maior que zero ou valor menor que 23
-            if( value > 0 || value < 59 )
+            if( value < 0 || value > 59 )
             {
                 throw new ArgumentOutOfRangeException(nameof(value), 
                             value, $"{nameof(Minutos)} deve ser 0 - 59 " );
@@ -86,7 +86,7 @@ class Tempo2
         set
         {
             // se valor maior que zero ou valor menor que 23
-            if( value > 0 || value < 59 )
+            if( value < 0 || value > 59 )
             {
                 throw new ArgumentOutOfRangeException(nameof(value), 
                             value, $"{nameof(Segundos)} deve ser 0 - 59 " );
@@ -102,8 +102,8 @@ class Tempo2
     public string HorarioUniversal() => $"{Hora:D2}:{Minutos:D2}:{Segundos:D2}";
 
     // converte em string o formato padrão do horário universal
-    public override string HorarioParaString() =>
-            $"{Hora == 0 || Hora == 12} ? 12 : {Hora % 12}:" +
+    public override string ToString() =>
+            $"{((Hora == 0 || Hora == 12) ? 12 : Hora % 12)}:" +
             $"{Minutos:D2}:{Segundos:D2} {(Hora < 12 ? "AM":"PM")}";
     
 } // fim classe tempo2
