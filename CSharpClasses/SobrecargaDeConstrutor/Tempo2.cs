@@ -31,13 +31,13 @@ class Tempo2
     // propriedade que configura e obtêm a hora
     public int Hora 
     {
-        get
+        get // retorna a hora
         {
             return hora;
         } // fim get
-        set
+        set // configura a hora
         {
-            // se valor maior que zero ou valor menor que 23
+            // se valor menor que zero ou valor maior que 23
             if( value < 0 || value > 23 )
             {
                 throw new ArgumentOutOfRangeException(nameof(value), 

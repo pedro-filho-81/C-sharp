@@ -25,24 +25,36 @@ namespace SobrecargaDeConstrutor
             // imprime hora específica
             WriteLine("Hora específica, minutos e segundos padrão.");
             WriteLine($"{horario1.HorarioUniversal()}");
-            WriteLine($"{horario1.ToString()}");
+            WriteLine($"{horario1.ToString()}\n");
 
             // imprime hora e minutos expecíficos
             WriteLine("Hora e minutos específicos, segundos padrão:");
             WriteLine($"{horario2.HorarioUniversal()}");
-            WriteLine($"{horario2.ToString()}");
+            WriteLine($"{horario2.ToString()}\n");
 
             // imprime hora, minutos e segundos específicos
             WriteLine("Hora, minutos e segundos específicos:");
             WriteLine($"{horario3.HorarioUniversal()}");
-            WriteLine($"{horario3.ToString()}");
+            WriteLine($"{horario3.ToString()}\n");
 
             // imprime o horário normal
             WriteLine("Horário padrão específico:");
             WriteLine($"{horario4.HorarioUniversal()}");
-            WriteLine($"{horario4.ToString()}");
+            WriteLine($"{horario4.ToString()}\n");
+
+            // inicializa horário6 com um valor inválido
+            try
+            {
+                // cria variável objeto para tempo2
+                var horario6 = new Tempo2(27, 74, 99 );
+            } // fim try
+            catch( ArgumentOutOfRangeException ex )
+            {
+                // imprime
+                WriteLine( "\nExcessão enquanto inicializa horário6." );
+                WriteLine(ex.Message);
+            } // fim catch
             
-            Console.WriteLine("Hello World!");
         } // fim main
     } // fim classe
 } // fim namespace
