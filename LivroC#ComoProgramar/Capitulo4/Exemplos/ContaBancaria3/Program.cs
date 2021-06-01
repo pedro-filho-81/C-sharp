@@ -10,7 +10,9 @@ namespace ContaBancaria3
             // limpa a tela
             Clear();
 
-            // chama a classe conta e cria o objeto minhaConta e atribui um valor
+            // 1º chama a classe Conta
+            // 2º cria o objeto minhaConta 
+            // 3º atribui um valor
             Conta minhaConta = new Conta( "Pedro" );
             // cria novo objeto
             Conta minhaConta1 = new Conta("Maria");
@@ -23,6 +25,7 @@ namespace ContaBancaria3
             WriteLine($"Primeiro nome da conta é {minhaConta.Nome}");
             WriteLine($"Segundo nome da conta é {minhaConta1.Nome}");
             WriteLine($"Terceiro nome da conta é {minhaConta2.Nome}");
+            
         } // fim main
     } // fim classe principal
 } // fim namespace
