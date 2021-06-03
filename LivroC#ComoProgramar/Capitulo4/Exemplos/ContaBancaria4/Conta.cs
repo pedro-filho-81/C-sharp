@@ -4,9 +4,10 @@ class Conta
 {
     // cria a propriedade nome
     public string Nome { get; set; }
+    
     // cria a variável privada saldo
     private decimal saldoInicial;
-
+    
     // cria o construtor da classe
     public Conta( string nome, decimal saldoInicial )
     {
