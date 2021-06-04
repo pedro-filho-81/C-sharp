@@ -37,18 +37,23 @@ class Conta
     {
         // se valor do depósito maior que zero
         if( valorDeDeposito > 0.0m)
-        saldo += valorDeDeposito;
+            saldo += valorDeDeposito;
     } // fim método depósito
 
     // cria método saque
     public void Saque( decimal saque )
     {
         // se saque menor ou igual ao saldo
-        if( saque <= saldo )
+        if( saque > 0.0m && saque <= saldo )
         {
             // saque retira dinheiro do saldo
             saldo -= saque;
         } // fim if
+        else
+        {
+            Console.WriteLine($"Saque {saque:C} maior que o saldo {saldo:C}\n" );
+        } // fim else
+
     } // fim método saque
     
 } // fim classe Conta
