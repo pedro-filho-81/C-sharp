@@ -26,14 +26,26 @@ namespace classeFatura
             // limpa a tela
             Clear();
 
+            // cabeçalho
+            WriteLine("SUPRIMENTO DE INFORMÁTICA." );
+
+            // variáveis
+            int quantidade = 3; // quantidade do produto
+            decimal valorDoProduto = 1000m; // valor do produto
+            decimal totalDasVendas = 0.0m; // recebe o método que calcular preço
+
             // cria o objeto da classe Fatura
-            Fatura minhaFatura = new Fatura( "001", "Computador", 1, 1000 );
+            Fatura minhaFatura = new Fatura( "001", "Computador", quantidade, valorDoProduto );
 
-            // mostra fatura inicial
+            // calcular o preço
+            totalDasVendas = minhaFatura.CalcularPreço(quantidade, valorDoProduto );
+
+            // mostra fatura
             WriteLine($"Fatura nº {minhaFatura.numero}\nProduto: {minhaFatura.descricao}" +
-                    $"\nQuantidade: {minhaFatura.quantidade}\nValor: {minhaFatura.Preco:C}");
+                    $"\nQuantidade: {quantidade}\nValor: {minhaFatura.Preco:C}" +
+                    $"\nTotal a pagar: {totalDasVendas:C}");
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("\nHello World C#!");
         } // fim main
     } // fim classe
 } // fim namespace
