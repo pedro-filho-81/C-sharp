@@ -22,7 +22,13 @@ class Empregado
         {
             return salarioMensal;
         } // fim get
-    
+        set
+        {
+            if( value > 0.0m)
+            {
+                salarioMensal = value;
+            } // fim if
+        } // fim set    
     } // fim propriedade
 
     // cria método salário anual

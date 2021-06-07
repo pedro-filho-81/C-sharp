@@ -22,6 +22,18 @@ namespace ClasseEmpregado
             // limpa a tela
             Clear();
 
+            // cria objetos da classe empregado
+            Empregado funcionario1 = new Empregado("Pedro", "Filho", 1000m );
+            Empregado funcionario2 = new Empregado("Cleonice", "Morais", 900m );
+
+            WriteLine($"{funcionario1.primeiroNome} {funcionario1.ultimoNome}" +
+                        $"\nSalário inicial {funcionario1.SalarioMensal:C}" +
+                        $"\nSalário anual {funcionario1.SalarioAnual(1000m):C}");
+
+            WriteLine($"\n{funcionario2.primeiroNome} {funcionario2.ultimoNome}" +
+                        $"\nSalário inicial {funcionario2.SalarioMensal:C}" +
+                        $"\nSalário anual {funcionario2.SalarioAnual(900m):C}");
+
             Console.WriteLine("Hello World!");
         }
     }
