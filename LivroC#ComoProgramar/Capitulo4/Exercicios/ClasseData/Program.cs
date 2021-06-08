@@ -21,7 +21,18 @@ namespace ClasseData
             // limpa a tela
             Clear();
 
-            Console.WriteLine("Hello World!");
+            // cria o objeto da classe data
+            // DATA VÁLIDA
+            Data minhaData = new Data(12, 02, 2021);
+            // DATA INVÁLIDA
+            Data minhaData1 = new Data(33, 13, 3000);
+
+            // cabeçalho
+            WriteLine( "MOSTRA DATA" );
+
+            // IMPRIME O RESULTADO
+            minhaData.MostraData();
+            minhaData1.MostraData();
             
         } // fim main
     } // fim classe
