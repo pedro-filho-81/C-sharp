@@ -36,7 +36,6 @@ namespace ContaBancaria4
             decimal deposito2 = decimal.Parse(ReadLine());
             minhaConta2.Deposito(deposito2);
 
-
             // cabeçalho
             WriteLine("\nLISTA DOS VALORES DEPOSITADOS E SEUS SALDOS.");
             WriteLine($"Foi depósitado {deposito:C}, na conta de {minhaConta.Nome}");
