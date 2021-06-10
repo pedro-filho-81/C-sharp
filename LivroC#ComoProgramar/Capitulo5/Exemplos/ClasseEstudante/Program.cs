@@ -10,6 +10,9 @@ namespace ClasseEstudante
             // limpa a tela
             Clear();
 
+            // cabeçalho
+            WriteLine("LISTA DOS ALUNOS E SUAS MÉDIAS E NOTAS");
+            
             // cria objeto da classe Estudante
             Estudante mediaDoAluno = new Estudante("Pedro", 95 );
             // chama o método mostra a média
@@ -19,7 +22,6 @@ namespace ClasseEstudante
 
             Estudante mediaDoAluno2 = new Estudante("Maria", 70 );
             MostraMedia(mediaDoAluno2);
-
 
             Console.WriteLine("Hello World!");
         } // fim main
