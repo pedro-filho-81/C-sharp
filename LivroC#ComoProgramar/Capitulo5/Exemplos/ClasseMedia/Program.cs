@@ -33,7 +33,7 @@ namespace ClasseMedia
             WriteLine($"\nTotal das 10 notas {total}");
             WriteLine($"Média {media}");
             
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("\nHello World!");
         } // fim main
     } // fim classe
 } // fim namespace
