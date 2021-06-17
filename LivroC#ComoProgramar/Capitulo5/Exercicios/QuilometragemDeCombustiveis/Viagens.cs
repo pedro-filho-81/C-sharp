@@ -1,5 +1,4 @@
 using System;
-
 class Viagens
 {
     // cria variáveis de instância
@@ -12,6 +11,7 @@ class Viagens
     {
         this.quilometragemDaViagem = quilometragemDaViagem;
         this.quantidadeDeCombustivel = quantidadeDeCombustivel;
+                
     } // fim construtor
 
     // cria propriedade Quilometragem da viagem
@@ -49,8 +49,11 @@ class Viagens
 
     public float Consumo()
     {
+        // cáculo do consumo
         consumo = (float) quilometragemDaViagem / quantidadeDeCombustivel;
+        // retorna o valor do consumo
         return consumo;
+
     } // fim método consumo
 
 }// fim classe viagens
