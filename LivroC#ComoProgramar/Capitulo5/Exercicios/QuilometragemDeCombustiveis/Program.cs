@@ -54,26 +54,48 @@ namespace QuilometragemDeCombustiveis
             // propriedade da classe recebe a quilometragem rodada
             minhaViagem.QuilometragemDaViagem = quilometrosRodados;
 
-            Write("Informe quantidade de combustível: " );
-            abastecimentos = int.Parse(ReadLine());
-            quantidadeAbastecida++;
-            minhaViagem.QuantidadeDeCombustivel = abastecimentos;
+            // enquanto quilometragem rodada diferente de -1 faça
+            while( quilometrosRodados != -1 )
+            {
+                Write("Informe quantidade de combustível: " );
+                // entrada do usuário para o abastecimento
+                abastecimentos = int.Parse(ReadLine());
+                // conta a quantidade abastecida
+                quantidadeAbastecida++;
+                // propriedade da classe recebe o valor do abastecimento
+                minhaViagem.QuantidadeDeCombustivel = abastecimentos;
 
-            MostrarMensagem( minhaViagem );
-            totalDeQuilometrosRodados += minhaViagem.QuilometragemDaViagem;
-            totalDeAbastecimentos += minhaViagem.QuantidadeDeCombustivel;
-            totalDoConsumo += minhaViagem.Consumo();
-            mediaDeConsumo = totalDoConsumo / ( quantidadeAbastecida );
+                // limpa a tela
+                Clear();
 
-            // cabeçalho
-            WriteLine("RESUMO DAS VIAGENS");
+                MostrarMensagem( minhaViagem );
+                // soma a quilometragem da viagem
+                totalDeQuilometrosRodados += minhaViagem.QuilometragemDaViagem;
+                // soma o total de abastecimentos
+                totalDeAbastecimentos += minhaViagem.QuantidadeDeCombustivel;
+                // soma o consumo
+                totalDoConsumo += minhaViagem.Consumo();
+                // média de consumo
+                mediaDeConsumo = ( float ) totalDoConsumo / ( quantidadeAbastecida );
+                    
+                // cabeçalho
+                WriteLine("RESUMO DAS VIAGENS");
 
-            // resumo das viagens
-            WriteLine($"Total de quilômetros rodados {totalDeQuilometrosRodados} Km\n" +
-                        $"Total de Abastecimentos {totalDeAbastecimentos} litros");
+                // resumo das viagens
+                WriteLine($"Total de quilômetros rodados: {totalDeQuilometrosRodados} Km\n" +
+                            $"Total de Abastecimentos: {totalDeAbastecimentos} litros");
 
-            WriteLine($"Total do consumo {totalDoConsumo:f} Km/l\n" +
-                        $"Média do consumo é {mediaDeConsumo} Km/l");
+                WriteLine($"Total do consumo: {totalDoConsumo:f} Km/l\n" +
+                            $"Média do consumo: {mediaDeConsumo:f} Km/l\n");
+                    
+                // entrada de dados
+                Write("Informe a quilometragem rodada: ");
+                // entrada do usuário
+                quilometrosRodados = int.Parse(ReadLine());
+                // propriedade da classe recebe a quilometragem rodada
+                minhaViagem.QuilometragemDaViagem = quilometrosRodados;
+
+            } // fim while
 
         } // fim main
 
