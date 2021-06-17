@@ -51,7 +51,6 @@ class Viagens
     {
         consumo = (float) quilometragemDaViagem / quantidadeDeCombustivel;
         return consumo;
-
     } // fim método consumo
 
 }// fim classe viagens

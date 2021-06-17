@@ -24,17 +24,57 @@ namespace QuilometragemDeCombustiveis
             // limpa a tela
             Clear();
 
+            // cria variáveis
+            float totalDoConsumo = 0;
+            float mediaDeConsumo = 0;
+            int totalDeQuilometrosRodados = 0;
+            int totalDeAbastecimentos = 0;
+            int quantidadeAbastecida = 1;
+            int quilometrosRodados = 0;
+            int abastecimentos = 0;
+
             // cabeçalho
             WriteLine("QUILOMETRAGEM DE COMBUSTÍVEL" );
-
+            
             // cria o objeto da classe viagens
             Viagens minhaViagem = new Viagens( 150, 50 );
+            // soma a quilometragem
+            totalDeQuilometrosRodados += minhaViagem.QuilometragemDaViagem;
+            // soma o abastecimento
+            totalDeAbastecimentos += minhaViagem.QuantidadeDeCombustivel;
+            // soma o consumo
+            totalDoConsumo += minhaViagem.Consumo();
+            // mostra a mensagem
             MostrarMensagem(minhaViagem);
 
-            Viagens minhaViagem1 = new Viagens( 200, 55 );
-            MostrarMensagem( minhaViagem1 );
+            // entrada de dados
+            Write("Informe a quilometragem rodada: ");
+            // entrada do usuário
+            quilometrosRodados = int.Parse(ReadLine());
+            // propriedade da classe recebe a quilometragem rodada
+            minhaViagem.QuilometragemDaViagem = quilometrosRodados;
 
-            Console.WriteLine("Hello World!");
+            Write("Informe quantidade de combustível: " );
+            abastecimentos = int.Parse(ReadLine());
+            quantidadeAbastecida++;
+            minhaViagem.QuantidadeDeCombustivel = abastecimentos;
+
+            MostrarMensagem( minhaViagem );
+            totalDeQuilometrosRodados += minhaViagem.QuilometragemDaViagem;
+            totalDeAbastecimentos += minhaViagem.QuantidadeDeCombustivel;
+            totalDoConsumo += minhaViagem.Consumo();
+            mediaDeConsumo = totalDoConsumo / ( quantidadeAbastecida );
+
+            // cabeçalho
+            WriteLine("RESUMO DAS VIAGENS");
+
+            // resumo das viagens
+            WriteLine($"Total de quilômetros rodados {totalDeQuilometrosRodados} Km\n" +
+                        $"Total de Abastecimentos {totalDeAbastecimentos} litros");
+
+            WriteLine($"Total do consumo {totalDoConsumo:f} Km/l\n" +
+                        $"Média do consumo é {mediaDeConsumo} Km/l");
+
         } // fim main
 
         // cria o método mostrar mensagens
@@ -42,7 +82,7 @@ namespace QuilometragemDeCombustiveis
         {
             WriteLine($"Quilometragem rodada {mostrarMensagem.QuilometragemDaViagem}Km" +
                         $"\nLitros abastecidos {mostrarMensagem.QuantidadeDeCombustivel}L" +
-                        $"\nConsumo {mostrarMensagem.Consumo():f}\n");
+                        $"\nConsumo {mostrarMensagem.Consumo():f} Km/l\n");               
         } // fim método
 
     } // fim classe
