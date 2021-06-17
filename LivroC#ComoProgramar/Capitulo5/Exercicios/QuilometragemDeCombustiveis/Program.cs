@@ -32,6 +32,7 @@ namespace QuilometragemDeCombustiveis
             int quantidadeAbastecida = 1;
             int quilometrosRodados = 0;
             int abastecimentos = 0;
+            int contador = 0;
 
             // cabeçalho
             WriteLine("QUILOMETRAGEM DE COMBUSTÍVEL" );
@@ -46,9 +47,10 @@ namespace QuilometragemDeCombustiveis
             totalDoConsumo += minhaViagem.Consumo();
             // mostra a mensagem
             MostrarMensagem(minhaViagem);
+            ++contador;
 
             // entrada de dados
-            Write("Informe a quilometragem rodada: ");
+            Write("Informe a quilometragem rodada (-1 = sair): ");
             // entrada do usuário
             quilometrosRodados = int.Parse(ReadLine());
             // propriedade da classe recebe a quilometragem rodada
@@ -64,6 +66,8 @@ namespace QuilometragemDeCombustiveis
                 quantidadeAbastecida++;
                 // propriedade da classe recebe o valor do abastecimento
                 minhaViagem.QuantidadeDeCombustivel = abastecimentos;
+                // conta número de viagens feitas
+                ++contador;
 
                 // limpa a tela
                 Clear();
@@ -80,7 +84,9 @@ namespace QuilometragemDeCombustiveis
                     
                 // cabeçalho
                 WriteLine("RESUMO DAS VIAGENS");
-
+                
+                WriteLine($"Você cadastrou {contador} viagens.");
+                
                 // resumo das viagens
                 WriteLine($"Total de quilômetros rodados: {totalDeQuilometrosRodados} Km\n" +
                             $"Total de Abastecimentos: {totalDeAbastecimentos} litros");
@@ -89,7 +95,7 @@ namespace QuilometragemDeCombustiveis
                             $"Média do consumo: {mediaDeConsumo:f} Km/l\n");
                     
                 // entrada de dados
-                Write("Informe a quilometragem rodada: ");
+                Write("Informe a quilometragem rodada (-1 = sair): ");
                 // entrada do usuário
                 quilometrosRodados = int.Parse(ReadLine());
                 // propriedade da classe recebe a quilometragem rodada
