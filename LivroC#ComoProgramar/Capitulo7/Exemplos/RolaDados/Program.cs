@@ -62,12 +62,10 @@ namespace RolaDados
 
             // cabeçalho
             WriteLine("\nFREQUÊNCIA DE DADO");
-            WriteLine($"1 apareceu {frequencia1} vezes");
-            WriteLine($"2 apareceu {frequencia2} vezes");
-            WriteLine($"3 apareceu {frequencia3} vezes");
-            WriteLine($"4 apareceu {frequencia4} vezes");
-            WriteLine($"5 apareceu {frequencia5} vezes");
-            WriteLine($"6 apareceu {frequencia6} vezes");
+            WriteLine("Face\tFrequência");
+            WriteLine($"1\t{frequencia1}\n2\t{frequencia2}");
+            WriteLine($"3\t{frequencia3}\n4\t{frequencia4}");
+            WriteLine($"5\t{frequencia5}\n6\t{frequencia6}");
 
         } // fim main
     } // fim classe
