@@ -60,13 +60,15 @@ namespace RolaDados
 
             } // fim for
 
+            // cabeçalho
+            WriteLine("\nFREQUÊNCIA DE DADO");
             WriteLine($"1 apareceu {frequencia1} vezes");
             WriteLine($"2 apareceu {frequencia2} vezes");
             WriteLine($"3 apareceu {frequencia3} vezes");
             WriteLine($"4 apareceu {frequencia4} vezes");
             WriteLine($"5 apareceu {frequencia5} vezes");
             WriteLine($"6 apareceu {frequencia6} vezes");
-            
+
         } // fim main
     } // fim classe
 } // fim namespace
