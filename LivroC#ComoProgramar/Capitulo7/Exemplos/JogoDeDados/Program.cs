@@ -7,9 +7,6 @@ namespace JogoDeDados
     {
         class Craps
         {
-            // cria objeto para números aleatórios
-            Random numerosAleatorios = new Random();
-
             // cria enumeração com constantes que representam o status do jogo
             private enum Status { CONTINUE, VENCEU, PERDEU }
 
