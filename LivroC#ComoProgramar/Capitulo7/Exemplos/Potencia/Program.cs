@@ -10,12 +10,19 @@ namespace Potencia
             // limpa a tela
             Clear();
 
+            // cabeçalho
+            WriteLine( "POTENCIAÇÃO" );
+
             // mostrar
             WriteLine($"Potência(10) = {Potencia(10)}");
 
             WriteLine($"Potência(2, 10) = {Potencia(2, 10)}");
 
             Console.WriteLine("Hello World!");
+
+            double numero1 = 1.88;
+            WriteLine($"\nA variável {nameof(numero1)} tem o valor {numero1}");
+            
         } // fim main
 
         // cria o método Potencia

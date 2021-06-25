@@ -10,7 +10,7 @@ namespace Variavel
             Clear(); // limpa a tela
 
             object altura = 1.81; // atribuindo um double a um objeto
-            object nome = "Pedro"; // atribuindo uma string a um objeto
+            object nome = "Pedro Filho"; // atribuindo uma string a um objeto
             //monsta o conteúdo dos objetos
             Console.WriteLine($"{nome} tem {altura}m de altura");
 
@@ -26,6 +26,6 @@ namespace Variavel
             WriteLine($"{outroNome} tem {tamanho2} caracteres." );
             
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fim namespace
