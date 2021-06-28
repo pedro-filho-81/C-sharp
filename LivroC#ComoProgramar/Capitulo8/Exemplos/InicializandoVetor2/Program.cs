@@ -12,6 +12,7 @@ namespace InicializandoVetor2
 
             // cria vetor
             int[] vetor = {15, 25, 85, 95, 75, 35, 45 };
+            int soma = 0;
 
             WriteLine($"{"Índice"}{"Valor", 8}" );
 
@@ -19,9 +20,12 @@ namespace InicializandoVetor2
             for( int contar = 0; contar < vetor.Length; contar++ )
             {
                 WriteLine( $"{contar, 5}{vetor[ contar ], 8}" );
+
+                soma += vetor[ contar ];
             } // fim for
 
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+            WriteLine($"Soma = {soma}" );
+            
+        } // fim main
+    } // fim classe
+} // fim namespace
