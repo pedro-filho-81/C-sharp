@@ -11,7 +11,7 @@ namespace InicializandoVetor3
             Clear();
             
             // cria constante
-            const int VetorLength = 5;
+            const int VetorLength = 10;
 
             // cria vetor
             int[] vetor = new int[VetorLength];
