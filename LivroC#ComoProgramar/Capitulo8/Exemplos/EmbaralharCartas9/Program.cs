@@ -9,9 +9,8 @@ namespace EmbaralharCartas9
         {
             // limpa a tela
             Clear();
-
-            
+                                    
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fom namespace
