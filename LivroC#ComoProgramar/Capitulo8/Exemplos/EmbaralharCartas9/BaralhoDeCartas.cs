@@ -3,11 +3,10 @@ using System;
 class BaralhoDeCartas
 {
     // cria objeto randomico
-    Random numeroAleatorio = new Random();
- 
+    private static Random numeroAleatorio = new Random();
     // cria a constante
-    const int NumeroDeCartas = 52;
-    // cria vetor baralho
+    private const int NumeroDeCartas = 52;
+    // cria vetor baralho do tipo Cartas
     private Cartas[] baralho = new Cartas[ NumeroDeCartas ];
     // cria variável
     private int cartaAtual = 0;
@@ -21,9 +20,9 @@ class BaralhoDeCartas
 
         for( var contar = 0; contar < baralho.Length; contar++ )
         {
-            baralho[ contar ] = new Cartas(faces[ contar % 13], naipe[ contar / 13] );
+            baralho[ contar ] = new Cartas( faces[ contar % 13], naipe[ contar / 13] );
         } // fim for        
-    } // fim construtor
+    } // fim construtor 
 
     // cria metodo embaralhar
     public void Embaralhar()
@@ -31,6 +30,26 @@ class BaralhoDeCartas
         // atribuir valores
         cartaAtual = 0;
 
-        
-    }
+        // loop 
+        for( var primeiro = 0; primeiro < baralho.Length; ++primeiro )
+        {
+            var segundo = numeroAleatorio.Next( NumeroDeCartas );
+
+            Cartas temporario = baralho[ primeiro ];
+            baralho[primeiro] = baralho[ segundo ];
+            baralho[ segundo ] = temporario;
+        } // fim for
+    } // fim método embaralhar
+
+    public Cartas DarCartas()
+    {
+        if( cartaAtual < baralho.Length )
+        {
+            return baralho[ cartaAtual++ ];
+        }// fim if
+        else
+        {
+            return null;
+        } // fim else
+    } // fim método dar cartas
 } // fim classe 
