@@ -25,5 +25,12 @@ class BaralhoDeCartas
         } // fim for        
     } // fim construtor
 
-    // 
+    // cria metodo embaralhar
+    public void Embaralhar()
+    {
+        // atribuir valores
+        cartaAtual = 0;
+
+        
+    }
 } // fim classe 
