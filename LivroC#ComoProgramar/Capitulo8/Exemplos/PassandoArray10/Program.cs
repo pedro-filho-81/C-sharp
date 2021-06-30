@@ -23,10 +23,12 @@ namespace PassandoArray10
                 Write($"{valores} " );
             } // fim foreach
 
+            WriteLine($"\nvetor[ 3 ] = {vetor[ 3 ]}" );
+
             // chama o método modifica array
             ModificaArray(vetor);
 
-            WriteLine($"\n\nOs valores do vetor modificado é:" );
+            WriteLine($"\nOs valores do vetor modificado é:" );
 
             foreach( var valores in vetor )
             {
@@ -34,7 +36,7 @@ namespace PassandoArray10
             } // fim foreach
 
             // mostrar
-            WriteLine($"O valor do vetor[ 3 ] = {vetor[ 3 ]}");
+            WriteLine($"\nO valor do vetor[ 3 ] = {vetor[ 3 ]}");
             
             ModificarElemento( vetor[3] );
             WriteLine($"\nO valor do elemento vetor[ 3 ] é {vetor[ 3 ]}" );
@@ -52,7 +54,7 @@ namespace PassandoArray10
 
         static void ModificarElemento( int vetor2 )
         {
-            vetor2 *= 2;
+            vetor2 *= 5;
         } // fim método
 
     } // fim classe
