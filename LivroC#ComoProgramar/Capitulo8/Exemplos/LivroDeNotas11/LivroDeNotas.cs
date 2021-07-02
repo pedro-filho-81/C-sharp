@@ -30,6 +30,9 @@ class LivroDeNotas
         WriteLine($"A maior nota é {ObterMaiorNota()}");
         WriteLine($"A menor nota é {ObterMenorNota()}" );
 
+        // pula linha
+        WriteLine();
+
         MostraBarraDeCaractere();
 
     } // fim método processa notas
@@ -66,7 +69,7 @@ class LivroDeNotas
                 maiorNota = valor;
             } // fimif
         } // fim for
-            
+
         // retorne a maior nota
         return maiorNota;
     } // fim método  maior nota
@@ -110,15 +113,16 @@ class LivroDeNotas
             else // se não
             {
                 // imprima
-                WriteLine($"{ i * 10:D2}{ i * 10 + 9:D2} " );
+                Write($"{ i * 10:D2}:{ i * 10 + 9:D2} " );
+
+                // loop para mostra os caracteres
+                for( var estrela = 0; estrela < notas[ i ] / 10; estrela++ )
+                {
+                    Write("*" );
+                } // fim for estrela
+
             } // fim else
-
-            // loop para mostra os caracteres
-            for( var estrela = 0; estrela < frequencia[ i ]; estrela++ )
-            {
-                Write("* " );
-            } // fim for estrela
-
+            
             // pula uma linha
             WriteLine();
 
@@ -133,7 +137,10 @@ class LivroDeNotas
         // loop
         for( var estudante = 0; estudante < notas.Length; estudante++ )
         {
-            WriteLine($"Estudante{estudante + 1, 2}{notas[ estudante ], 3}" );
+            WriteLine($"Estudante{estudante + 1, 3}{ notas[ estudante ], 4}" );
         } // fim for
+
+        // pula uma linha
+        WriteLine();
     }// fim método saída das notas
 } // fim de classe
