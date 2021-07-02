@@ -27,15 +27,15 @@ class LivroDeNotas
 
         WriteLine($"A média da classe é {ObterMedia():F}" );
 
-        WriteLine($"A maior nota é {ObterNotaMaxima()}");
-        WriteLine($"A menor nota é {ObterNotaMinima()}" );
+        WriteLine($"A maior nota é {ObterMaiorNota()}");
+        WriteLine($"A menor nota é {ObterMenorNota()}" );
 
         MostraBarraDeCaractere();
 
     } // fim método processa notas
 
     // cria método obtem mínimo
-    public int ObterNotaMinima()
+    public int ObterMenorNota()
     {
         var menorNota = notas[0];
 
@@ -47,13 +47,14 @@ class LivroDeNotas
             {
                 menorNota = valor;
             } // fim if
-
-            return menorNota;
         } // fim for
+
+        return menorNota;
+
     } // fim método obter mínimo
 
     // cria método maior nota
-    public int ObterNotaMaxima()
+    public int ObterMaiorNota()
     {
         var maiorNota = notas[ 0 ];
 
@@ -64,17 +65,16 @@ class LivroDeNotas
             {
                 maiorNota = valor;
             } // fimif
-
-            // retorne a maior nota
-            return maiorNota;
-
         } // fim for
+            
+        // retorne a maior nota
+        return maiorNota;
     } // fim método  maior nota
 
     // cria o método obtem média
     public double ObterMedia()
     {
-        int total = 0.0F;
+        float total = 0.0F;
 
         // loop
         foreach( var nota in notas )
@@ -85,5 +85,55 @@ class LivroDeNotas
         return total / notas.Length;
     } // fim método obter média
 
-    
+    // cria método barra de caractere
+    public void MostraBarraDeCaractere()
+    {
+        WriteLine("DISTRIBUIÇÃO DAS NOTAS");
+
+        // CRIA VETOR FREQUÊNCIA
+        int[] frequencia = new int[ 11 ];
+
+        // cria loop para verificar a frequência
+        foreach( var nota in notas)
+        {
+            ++frequencia[ nota / 10 ];
+        } // fim foreach
+
+        // cria loop para mostrar a frequência
+        for( int i = 0; i < frequencia.Length; i++ )
+        {
+            // se i igual a 10 imprima 100
+            if( i == 10 )
+            {
+                WriteLine("100" );
+            } // fim if
+            else // se não
+            {
+                // imprima
+                WriteLine($"{ i * 10:D2}{ i * 10 + 9:D2} " );
+            } // fim else
+
+            // loop para mostra os caracteres
+            for( var estrela = 0; estrela < frequencia[ i ]; estrela++ )
+            {
+                Write("* " );
+            } // fim for estrela
+
+            // pula uma linha
+            WriteLine();
+
+        } // fim for
+    } // fim método saída das notas
+
+    // cria método saída de notas
+    public void SaidaDasNotas()
+    {
+        WriteLine("As notas são: " );
+
+        // loop
+        for( var estudante = 0; estudante < notas.Length; estudante++ )
+        {
+            WriteLine($"Estudante{estudante + 1, 2}{notas[ estudante ], 3}" );
+        } // fim for
+    }// fim método saída das notas
 } // fim de classe
