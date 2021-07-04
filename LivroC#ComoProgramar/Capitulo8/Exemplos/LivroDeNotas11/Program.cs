@@ -11,7 +11,7 @@ namespace LivroDeNotas11
             Clear();
             
             // cria o vetor notas
-            int[] vetorNotas = {87, 97, 75, 65, 58, 47, 35, 26, 10, 7 };
+            int[] vetorNotas = {87, 68, 94, 100, 83, 78, 85, 91, 76, 87};
 
             // cria o objeto da classe
             LivroDeNotas minhaNota = new LivroDeNotas("C# Como Programar", vetorNotas );
@@ -20,6 +20,6 @@ namespace LivroDeNotas11
             minhaNota.ProcessarNotas();
 
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fim namespace
