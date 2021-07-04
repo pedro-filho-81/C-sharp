@@ -26,10 +26,10 @@ class LivroDeNotas
         SaidaDasNotas();
 
         WriteLine($"A média da classe é {ObterMedia():F}" );
-
-        WriteLine($"A maior nota é {ObterMaiorNota()}");
+        
         WriteLine($"A menor nota é {ObterMenorNota()}" );
-
+        WriteLine($"A maior nota é {ObterMaiorNota()}");
+        
         // pula linha
         WriteLine();
 
@@ -94,7 +94,7 @@ class LivroDeNotas
         WriteLine("DISTRIBUIÇÃO DAS NOTAS");
 
         // CRIA VETOR FREQUÊNCIA
-        int[] frequencia = new int[ 11 ];
+        var frequencia = new int[ 11 ];
 
         // cria loop para verificar a frequência
         foreach( var nota in notas)
@@ -108,21 +108,20 @@ class LivroDeNotas
             // se i igual a 10 imprima 100
             if( i == 10 )
             {
-                WriteLine("100" );
+                Write(" 100:" );
             } // fim if
             else // se não
             {
                 // imprima
-                Write($"{ i * 10:D2}:{ i * 10 + 9:D2} " );
-
-                // loop para mostra os caracteres
-                for( var estrela = 0; estrela < notas[ i ] / 10; estrela++ )
-                {
-                    Write("*" );
-                } // fim for estrela
-
+                Write($"{ i * 10:D2}-{ i * 10 + 9:D2} " );
             } // fim else
             
+            // loop para mostra os caracteres
+            for( var estrela = 0; estrela < frequencia[ i ]; estrela++ )
+            {
+                Write("*" );
+            } // fim for estrela
+
             // pula uma linha
             WriteLine();
 
