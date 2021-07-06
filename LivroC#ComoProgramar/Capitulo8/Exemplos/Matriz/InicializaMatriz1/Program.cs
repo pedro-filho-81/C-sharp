@@ -13,6 +13,8 @@ namespace InicializaMatriz1
             // cria uma matriz retangulas e inicializa
             int[ , ] matrizRetangular = { {1, 2, 3}, {4, 5, 6} };
 
+            int [][] matrizIrregular = { new int[]{1, 2}, new int[]{3}, new int[]{4, 5, 6} };
+
             // loop para crair linha
             for( int linha = 0; linha < matrizRetangular.GetLength(0); linha++ )
             {
@@ -27,7 +29,18 @@ namespace InicializaMatriz1
 
             } // fim for
 
-            Console.WriteLine("Hello World!");
+            WriteLine();
+
+            foreach( var linha in matrizIrregular )
+            {
+                foreach( var elemento in linha )
+                {
+                    Write($"{elemento} " );
+                } // fim foreach
+
+                WriteLine(); // pula linha
+            } // fim foreach
+
         } // fim main
     } // fim clase
 } // fim name
