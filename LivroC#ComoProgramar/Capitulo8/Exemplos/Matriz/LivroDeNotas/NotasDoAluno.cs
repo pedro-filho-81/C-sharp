@@ -84,4 +84,37 @@ class NotasDoAluno
 
     } // fim método obter média
 
+    public void BarrasDeCaracteres()
+    {
+        WriteLine("Distribuição das Notas:" );
+
+        // cria vetor vrequencia
+        var frequencia = new int[ 11 ];
+
+        foreach( var nota in notas )
+        {
+            ++frequencia[ nota / 10 ];
+        } // fim for each
+
+        // loop para mostra notas
+        for( int mostra = 0; mostra < frequencia.Length; mostra++ )
+        {
+            if( mostra == 10 )
+            {
+                Write("  100: " );
+            } // fim if
+            else
+            {
+                WriteLine($"{mostra * 10:d2} - {mostra * 10 + 9:d2}: " );
+            } // fim else
+
+            for( int estrela = 0; estrela < frequencia[ mostra ]; estrela++ )
+            {
+                Write("* " );
+            } // fim for estrela
+
+            WriteLine(); // pula uma linha
+
+        } // fim for
+    } // fim método barra de caractere
 } // fim da classe
