@@ -24,14 +24,14 @@ class NotasDoAluno
     public void ProcessandoNotas()
     {
         // mostrar notas
-        //MostrarNotas();
+        MostrarNotas();
 
         // mostrar resultado
-        //WriteLine($"A menor nota é {MostrarMenorNota()}" +
-                    //$"\nA maior nota é {MstrarMaiorNota()}" );
+        WriteLine($"A menor nota é {MostrarMenorNota()}" +
+                    $"\nA maior nota é {MstrarMaiorNota()}" );
         
         // mostrar barras de caracteres
-        //BarrasDeCaracteres();
+        BarrasDeCaracteres();
 
     } // fim método processando notas
 
