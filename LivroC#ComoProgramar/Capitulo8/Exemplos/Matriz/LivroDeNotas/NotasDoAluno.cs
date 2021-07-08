@@ -24,11 +24,11 @@ class NotasDoAluno
     public void ProcessandoNotas()
     {
         // mostrar notas
-        MostrarNotas();
+        //DisplayNotas();
 
         // mostrar resultado
-        WriteLine($"A menor nota é {MostrarMenorNota()}" +
-                    $"\nA maior nota é {MstrarMaiorNota()}" );
+        WriteLine($"A menor nota é {ObterMenorNota()}" +
+                    $"\nA maior nota é {ObterMaiorNota()}" );
         
         // mostrar barras de caracteres
         BarrasDeCaracteres();
@@ -101,11 +101,11 @@ class NotasDoAluno
         {
             if( mostra == 10 )
             {
-                Write("  100: " );
+                Write("    100: " );
             } // fim if
             else
             {
-                WriteLine($"{mostra * 10:d2} - {mostra * 10 + 9:d2}: " );
+                Write($"{mostra * 10:d2} - {mostra * 10 + 9:d2}: " );
             } // fim else
 
             for( int estrela = 0; estrela < frequencia[ mostra ]; estrela++ )
