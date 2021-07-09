@@ -17,14 +17,14 @@ class NotasDoAluno
 
     public void DisplayNotas()
     {
-        WriteLine($"Bem vindo ao livro de notas do curso {NomeDoCurso}" );
+        WriteLine($"Bem vindo ao livro de notas do curso:\n{NomeDoCurso}\n" );
     } // fim mostrar notas
 
     // cria método processo das notas
     public void ProcessandoNotas()
     {
         // mostrar notas
-        //DisplayNotas();
+        MostrarNotas();
 
         // mostrar resultado
         WriteLine($"A menor nota é {ObterMenorNota()}" +
@@ -106,7 +106,7 @@ class NotasDoAluno
             else
             {
                 Write($"{mostra * 10:d2} - {mostra * 10 + 9:d2}: " );
-            } // fim else
+            } // fim else   
 
             for( int estrela = 0; estrela < frequencia[ mostra ]; estrela++ )
             {
@@ -117,4 +117,32 @@ class NotasDoAluno
 
         } // fim for
     } // fim método barra de caractere
+
+    // cria mostra notas
+    public void MostrarNotas()
+    {
+        WriteLine("As notas são:\n");
+        Write("           .   " );
+
+        for( var teste = 0; teste < notas.GetLength(1); teste++ )
+        {
+            Write($"  Teste{teste + 1}" );
+        } // fim for
+
+        WriteLine($"     Média" );
+
+        for( var estudante = 0; estudante < notas.GetLength(0); estudante++ )
+        {
+            Write( $"Estudante {estudante + 1, 2}");
+
+            for( var nota = 0; nota < notas.GetLength(1); nota++ )
+            {
+                Write($"{notas[ estudante, nota], 9}" );
+            } // fim for nota
+
+            WriteLine($"{ObterMedia(estudante), 10:f}" );
+        } // fim for estudante
+
+    } // fim método mostrar notas
+
 } // fim da classe
