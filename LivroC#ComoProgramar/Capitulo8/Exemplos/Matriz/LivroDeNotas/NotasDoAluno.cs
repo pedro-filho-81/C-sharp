@@ -141,6 +141,7 @@ class NotasDoAluno
             } // fim for nota
 
             WriteLine($"{ObterMedia(estudante), 10:f}" );
+        
         } // fim for estudante
 
     } // fim método mostrar notas
