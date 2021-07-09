@@ -1,4 +1,6 @@
 ﻿using System;
+using static System.Console;
+
 
 namespace LinhaDeComando
 {
@@ -6,6 +8,9 @@ namespace LinhaDeComando
     {
         static void Main(string[] args)
         {
+            // limpa a tela 
+            Clear();
+
             Console.WriteLine("Hello World!");
         }
     }
