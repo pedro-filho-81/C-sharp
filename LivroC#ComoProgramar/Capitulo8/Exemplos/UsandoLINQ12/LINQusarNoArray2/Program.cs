@@ -1,4 +1,6 @@
 ﻿using System;
+using static System.Console;
+using System.Linq;
 
 namespace UsandoLINQ12
 {
