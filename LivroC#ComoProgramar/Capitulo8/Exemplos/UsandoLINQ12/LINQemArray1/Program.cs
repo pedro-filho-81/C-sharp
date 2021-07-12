@@ -73,11 +73,11 @@ namespace LINQemarray1
             // LINQ para mostrar os valores maiores que 4 em ordem decrescente
             WriteLine("\nMostra os valores maiores que 4 em ordem decrescente:");
 
-            var maiorQue4emOrdem = 
-                from valor in valores
-                where valor > 4
-                orderby valor descending
-                select valor;
+            var maiorQue4emOrdem = // cria variável
+                from valor in valores // fonte de dados
+                where valor > 4 // condição
+                orderby valor descending // coloca em ordem
+                select valor; // seleciona o objeto
 
             // loop para mostrar os valores
             foreach( var valor in maiorQue4emOrdem )
