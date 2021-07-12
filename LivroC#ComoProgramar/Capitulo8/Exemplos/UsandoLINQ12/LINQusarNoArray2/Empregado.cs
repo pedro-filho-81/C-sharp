@@ -1,6 +1,4 @@
 using System;
-using static System.Console;
-using System.Linq;
 
 class Empregado
 {
@@ -34,5 +32,8 @@ class Empregado
             } // fim if
         } // fim set
     } // fim propriedade
+
+    // retorna uma string contendo informações do empregado
+    public override string Tostring() => ($"{PrimeiroNome, -10}{SegundoNome, -10}{Salario, 10:C2}");
     
 } // fim da classe
