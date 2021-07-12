@@ -34,6 +34,6 @@ class Empregado
     } // fim propriedade
 
     // retorna uma string contendo informações do empregado
-    public override string Tostring() => ($"{PrimeiroNome, -10}{SegundoNome, -10}{Salario, 10:C2}");
+    public override string ToString() => ($"{PrimeiroNome, -10}{UltimoNome, -10}{Salario, 10:C2}");
     
 } // fim da classe
