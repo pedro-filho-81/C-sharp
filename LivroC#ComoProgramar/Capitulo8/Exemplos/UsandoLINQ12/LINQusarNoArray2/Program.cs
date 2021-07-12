@@ -29,6 +29,24 @@ namespace UsandoLINQ12
                 WriteLine($"{elemento} " );
             } // fim foreach
 
+            // mostra valores maiores que 4000
+            WriteLine($"\nValores maiores que {4000:c} e menores que {6000:c}");
+
+            // filtrar
+            var valorEntre4k6k = 
+            from e in empregados
+            where (e.Salario >= 4000m) && (e.Salario <=6000m)
+            orderby e.Salario
+            select e;
+
+            foreach(var elemento in valorEntre4k6k )
+            {
+                WriteLine($"{elemento}");
+            } // fim foreach
+
+
+
+
             Console.WriteLine("Hello World!");
         } // fim main
     } // fim classe
