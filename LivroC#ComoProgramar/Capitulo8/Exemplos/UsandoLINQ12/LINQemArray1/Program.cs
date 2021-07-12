@@ -14,6 +14,8 @@ namespace LINQemarray1
             // cria um array
             int[] valores = {2, 0, 9, 8, 1, 3, 4, 5, 7, 6};
 
+            WriteLine("TRABALHANDO COM LINQ");
+
             // mostra os valores originais
             WriteLine("Mostra os valores originais do array: ");
 
@@ -69,7 +71,20 @@ namespace LINQemarray1
             }// fim foreach
 
             // LINQ para mostrar os valores maiores que 4 em ordem decrescente
+            WriteLine("\nMostra os valores maiores que 4 em ordem decrescente:");
 
+            var maiorQue4emOrdem = 
+                from valor in valores
+                where valor > 4
+                orderby valor descending
+                select valor;
+
+            // loop para mostrar os valores
+            foreach( var valor in maiorQue4emOrdem )
+            {
+                Write($"{valor} ");
+            } // fim foreach
+            
             Console.WriteLine("\nHello World!");
         } // fim main
     } // fim classe
