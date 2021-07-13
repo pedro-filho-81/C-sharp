@@ -44,8 +44,18 @@ namespace UsandoLINQ12
                 WriteLine($"{elemento}");
             } // fim foreach
 
+            WriteLine("\nArray organizado pelo primeiro e segundo nome");
 
+            var organizaPorNome = 
+                from e in empregados
+                orderby e.PrimeiroNome, e.UltimoNome
+                select e;
 
+            // loop para mostrar array organizado pelo nome
+            foreach( var elemento in organizaPorNome )
+            {
+                WriteLine($"{elemento} " );
+            } // fim foreach
 
             Console.WriteLine("Hello World!");
         } // fim main
