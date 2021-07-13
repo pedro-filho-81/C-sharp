@@ -48,13 +48,41 @@ namespace UsandoLINQ12
 
             var organizaPorNome = 
                 from e in empregados
-                orderby e.PrimeiroNome, e.UltimoNome
+                orderby e.UltimoNome, e.PrimeiroNome
                 select e;
 
+                if( organizaPorNome.Any())
+                {
+                    WriteLine(organizaPorNome.First());
+                } // fim if
+                else
+                {
+                    WriteLine("Não encontrado!");
+                } // fim else
+
+                var ultimoNome = 
+                    from e in empregados
+                    select e.UltimoNome;
+                
             // loop para mostrar array organizado pelo nome
-            foreach( var elemento in organizaPorNome )
+            foreach( var elemento in ultimoNome.Distinct() )
             {
                 WriteLine($"{elemento} " );
+            } // fim foreach
+
+            // mostra apenas os nomes
+            WriteLine("\nApenas os nomes" );
+
+            // LINQ seleciona pelo primeiro e segundo nome
+
+            var nomes = 
+            from e in empregados
+            select new {e.PrimeiroNome, e.UltimoNome};
+
+            // loop para mostrar os nomes
+            foreach( var nome in nomes)
+            {
+                WriteLine($"{nome}");
             } // fim foreach
 
             Console.WriteLine("Hello World!");
