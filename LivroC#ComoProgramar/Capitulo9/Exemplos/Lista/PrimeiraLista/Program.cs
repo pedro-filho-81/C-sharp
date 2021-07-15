@@ -24,16 +24,68 @@ namespace PrimeiraLista
             itens.Add("vermelho"); // add adiciona um elemento ao fim da lista
             itens.Insert(0, "amarelo"); // Insert adiciona um elemento ao índice indicado
 
-            // loop para mostra os elementos da lista
-            foreach(var elemento in itens )
-            {
-                WriteLine($"{elemento}");
-            }
-
             // depois de adicionar valores a lista itens
             WriteLine($"Depois de adicionar valores a variável contar é {itens.Count} e a capacidade é {itens.Capacity}");
 
-            Console.WriteLine("Hello World!");
+            // mostra as cores da lista
+            WriteLine($"\n\nMostra com a instrução for as cores adicionadas na lista:");
+
+            for( int i = 0; i < itens.Count; i++ )
+            {
+                Write($"{itens[i]} " );
+            } // fim for
+
+            // mostra as cores da lista
+            WriteLine($"\n\nMostra com a instrução foreact as cores adicionadas na lista:");
+
+            // loop para mostra os elementos da lista
+            foreach(var elemento in itens )
+            {
+                Write($"{elemento} ");
+            } // fim foreach
+
+            // adicionando às cores verde e amarelo com Add
+            itens.Add("Verde");
+            itens.Add("Amarelo");
+
+            WriteLine($"\n\nA lista depois de adicionar mais 2 cores: " +
+                    $" Contagem = {itens.Count} Capacidade = {itens.Capacity}");
+
+            WriteLine("A lista com mais dois elementos:" );
+            
+            foreach(var elemento in itens )
+            {
+                Write($"{elemento} ");
+            } // fim foreach
+            
+            // removendo o primeiro amarelo da lista
+            itens.Remove("amarelo");
+
+            WriteLine( $"\n\nMostra a lista sem a string amarelo.\nUsando o comando itens.Remove(\"amarelo\")" );
+            
+            foreach(var elemento in itens )
+            {
+                Write($"{elemento} ");
+            } // fim foreach
+            
+            // removendo o item do índice 1
+            itens.RemoveAt( 1 );
+
+            WriteLine("\n\nLista sem o item do índice = 1" +
+                        "\nRemovido com a instrução itens.RemoveAt( 1 )");
+            
+            foreach(var elemento in itens )
+            {
+                Write($"{elemento} ");
+            } // fim foreach
+
+            WriteLine($"\n\nA lista depois de removido 2 itens: " +
+                    $" Contagem = {itens.Count} Capacidade = {itens.Capacity}");
+
+            // checando se um valor está na lista
+            WriteLine("\n\nTem a cor vermelho na lista?" +
+                    $"{ (itens.Contains("vermelho") ? "SIM" : "NÃO" )}");
+    
         } // fim main
     } // fim classe
 } // fim name
