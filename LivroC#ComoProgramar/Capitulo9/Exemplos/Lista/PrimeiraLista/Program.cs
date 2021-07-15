@@ -83,8 +83,26 @@ namespace PrimeiraLista
                     $" Contagem = {itens.Count} Capacidade = {itens.Capacity}");
 
             // checando se um valor está na lista
-            WriteLine("\n\nTem a cor vermelho na lista?" +
+            WriteLine("\nTem a cor vermelho na lista?" +
                     $"{ (itens.Contains("vermelho") ? "SIM" : "NÃO" )}");
+            
+            // adicionando itens a lista
+            itens.Add("laranja"); // adiciona a cor laranja
+            itens.Add("violeta" ); // adiciona a cor violeta
+            itens.Add( "azul" ); // adiciona a cor azul
+
+            WriteLine("\nMostra a lista após a inculsao de três cores.");
+
+            // loop para mostrar os elementos da lista
+            foreach(var elemento in itens )
+            {
+                Write($"{elemento} ");
+            } // fim foreach
+
+            WriteLine($"\n\nA lista depois de adicionado 3 itens: " +
+                    $" Contagem = {itens.Count} Capacidade = {itens.Capacity}");
+
+
     
         } // fim main
     } // fim classe
