@@ -64,6 +64,12 @@ namespace ConsultaListaComLINQ
                 Write($"{item} ");
             } // fim foreach
 
+            WriteLine("\nMostra a lista original depois de incluir mais 2 palavras.");
+
+            foreach( var item in itens )
+            {
+                Write($"{item} " );
+            } // fim foreach
 
         } // fim man
     } // fim classe
