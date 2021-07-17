@@ -14,7 +14,7 @@ namespace PrimeiraLista
             // cabeçalho
             WriteLine("ADICIONANDO ITENS A UMA LISTA");
 
-            // cria lista de strings itens
+            // cria uma lista do tipo string de nome itens
             var itens = new List<string>();
 
             // antes de adicionar um item
@@ -22,7 +22,7 @@ namespace PrimeiraLista
             
             // ADICIONA um valor a lista itens
             itens.Add("vermelho"); // add adiciona um elemento ao fim da lista
-            itens.Insert(0, "amarelo"); // Insert adiciona um elemento ao índice indicado
+            itens.Insert(0, "amarelo"); // inseri a string amarelo na posição 0 da lista
 
             // depois de adicionar valores a lista itens
             WriteLine($"Depois de adicionar valores a variável contar é {itens.Count} e a capacidade é {itens.Capacity}");
@@ -30,6 +30,7 @@ namespace PrimeiraLista
             // mostra as cores da lista
             WriteLine($"\n\nMostra com a instrução for as cores adicionadas na lista:");
 
+            // loop para mostrar os elementos da lista itens
             for( int i = 0; i < itens.Count; i++ )
             {
                 Write($"{itens[i]} " );
@@ -44,10 +45,11 @@ namespace PrimeiraLista
                 Write($"{elemento} ");
             } // fim foreach
 
-            // adicionando às cores verde e amarelo com Add
+            // adicionando às cores verde e amarelo com o método Add
             itens.Add("Verde");
             itens.Add("Amarelo");
 
+            // imprime
             WriteLine($"\n\nA lista depois de adicionar mais 2 cores: " +
                     $" Contagem = {itens.Count} Capacidade = {itens.Capacity}");
 
@@ -83,7 +85,7 @@ namespace PrimeiraLista
                     $" Contagem = {itens.Count} Capacidade = {itens.Capacity}");
 
             // checando se um valor está na lista
-            WriteLine("\nTem a cor vermelho na lista?" +
+            WriteLine("\nTem a cor vermelho na lista? " +
                     $"{ (itens.Contains("vermelho") ? "SIM" : "NÃO" )}");
             
             // adicionando itens a lista
@@ -101,8 +103,6 @@ namespace PrimeiraLista
 
             WriteLine($"\n\nA lista depois de adicionado 3 itens: " +
                     $" Contagem = {itens.Count} Capacidade = {itens.Capacity}");
-
-
     
         } // fim main
     } // fim classe
