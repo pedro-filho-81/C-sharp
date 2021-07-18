@@ -71,6 +71,6 @@ namespace ConsultaListaComLINQ
                 Write($"{item} " );
             } // fim foreach
 
-        } // fim man
+        } // fim main
     } // fim classe
 } // fim name
