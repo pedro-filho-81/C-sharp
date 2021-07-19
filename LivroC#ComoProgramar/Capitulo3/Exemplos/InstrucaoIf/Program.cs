@@ -24,7 +24,7 @@ namespace InstrucaoIf
             } 
 
             // se número 1 diferente de 2
-            if( numero1 != numero2 );
+            if( numero1 != numero2 )
             {
                 WriteLine($"{numero1} != {numero2}");
             }
