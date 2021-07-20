@@ -19,7 +19,6 @@ namespace Compras
             decimal valorProduto1 = 0.0m;
             decimal valorProduto2 = 0.0m;
             decimal valorProduto3 = 0.0m;
-            decimal soma = 0.0m;
 
             // entrada de dados
             Write("Digite o primeiro valor: ");
@@ -32,11 +31,11 @@ namespace Compras
             // calculando os 10% de descontos
             decimal desconto1 = valorProduto1 * 10 / 100;
             WriteLine($"\nO produto 1, de valor {valorProduto1:c}\nTeve um desconto de {desconto1:c}" +
-                        $"\nvalor a pagar {valorProduto1 - desconto1:c}\n");
+                        $"\nvalor a pagar {valorProduto1 - desconto1:c}");
             
             decimal desconto2 = valorProduto2 * 10 / 100;
             WriteLine($"\nO produto 2, de valor {valorProduto2:c}\nTeve um desconto de {desconto2:c}" +
-                        $"\nvalor a pagar {valorProduto2 - desconto2:c}\n");
+                        $"\nvalor a pagar {valorProduto2 - desconto2:c}");
             
             decimal desconto3 = valorProduto3 * 10 / 100;
             WriteLine($"\nO produto 3, de valor {valorProduto3:c}\nTeve um desconto de {desconto3:c}" +
