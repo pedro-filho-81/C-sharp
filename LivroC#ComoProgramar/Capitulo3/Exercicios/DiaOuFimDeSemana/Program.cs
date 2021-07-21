@@ -18,7 +18,40 @@ namespace DiaOuFimDeSemana
             // limpa a tela
             Clear();
 
+            // entrada de dados
+            Write("Digite um número inteiro: " );
+            int dia = int.Parse(ReadLine());
+
+            // se dia está entre 1 a 5
+            if( dia >= 1 )
+            {
+                if( dia <= 5 )
+                {
+                    // imprima
+                    WriteLine($"{dia} é um dia útil." );
+                } // fim if interno
+            } // fi if externo
+
+            // se dia igual a 6 ou 7
+            if( dia >= 6 )
+            {
+                if( dia <= 7 )
+                {
+                    // imprima
+                    WriteLine($"{dia} é fim de semana." );
+                } // fim if
+            } // fim if
+
+            // se dia menor que zero e maior que 7
+            if( dia <= 0 )
+            {
+                if( dia > 7 )
+                {
+                    WriteLine($"{dia} valor inválido." );
+                } // fim if
+            } // fim if
+
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fimmain
+    } // fim classe
+} // fim name
