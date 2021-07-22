@@ -23,7 +23,7 @@ namespace NumeroParOuImpar
             {
                 Console.WriteLine($"{numero} É ÍMPAR.");
             } // fim if
-            
+
         } // fim main
     } // fim classe
 } // fim name
