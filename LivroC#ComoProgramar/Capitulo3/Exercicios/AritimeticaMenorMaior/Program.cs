@@ -27,6 +27,9 @@ namespace AritimeticaMenorMaior
             int menor = 0;
             int maior = 0;          
 
+            // cabeçalho
+            WriteLine("ARITMÉTICA - MAIOR - MENOR - VALOR");
+            
             // entrada de dados
             Console.Write("Digite o primeiro número: ");
             numero1 = int.Parse(ReadLine());
