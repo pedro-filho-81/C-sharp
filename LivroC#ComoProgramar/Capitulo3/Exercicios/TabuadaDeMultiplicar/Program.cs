@@ -26,10 +26,19 @@ namespace TabuadaDeMultiplicar
             numero = int.Parse(ReadLine());
 
             // cabeçalho
-            WriteLine("")
+            WriteLine("\tTABUADA DE MULTIPLICAR");
 
             // tabuada de multiplicar
             WriteLine($"{numero}\tx\t 1\t=\t{numero * 1}");
+            WriteLine($"{numero}\tx\t 2\t=\t{numero * 2}");
+            WriteLine($"{numero}\tx\t 3\t=\t{numero * 3}");
+            WriteLine($"{numero}\tx\t 4\t=\t{numero * 4}");
+            WriteLine($"{numero}\tx\t 5\t=\t{numero * 5}");
+            WriteLine($"{numero}\tx\t 6\t=\t{numero * 6}");
+            WriteLine($"{numero}\tx\t 7\t=\t{numero * 7}");
+            WriteLine($"{numero}\tx\t 8\t=\t{numero * 8}");
+            WriteLine($"{numero}\tx\t 9\t=\t{numero * 9}");
+            WriteLine($"{numero}\tx\t10\t=\t{numero * 10}\n");
 
             Console.WriteLine("Hello World!");
         } // fim main
