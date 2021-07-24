@@ -18,7 +18,7 @@ namespace ContaBancaria
 
             // entrada de dados
             Write("Digite o nome: " );
-            // cria a variável nome e aguarda a tetrada pelo usuário
+            // cria a variável nome e aguarda a entrada pelo usuário
             string nome = ReadLine();
             // o objeto minha conta chama o método set nome e atribui o nome digitado
             minhaConta.SetNome(nome);
