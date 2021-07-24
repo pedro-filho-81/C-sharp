@@ -25,6 +25,21 @@ namespace RegistroDoEstudante
         {
             // limpa a tela
             Clear();
+
+            // cria o objeto da classe aluno
+            Aluno estudante = new Aluno("001", "Pedro", 75.25m, 85.02m, 96.43m );
+
+            // cabeçalho
+            WriteLine("REGISTRO DO ALUNO" );
+
+            // mostra resultado
+            WriteLine($"ID: {estudante.IdDoAluno}");
+            WriteLine( $"Nome: {estudante.Nome}" );
+            WriteLine( $"Nota1 = {estudante.Nota1}" );
+            WriteLine( $"Nota2 = {estudante.Nota2}" );
+            WriteLine( $"Nota3 = {estudante.Nota3}" );
+            WriteLine( $"Total = {estudante.Nota1 + estudante.Nota2 + estudante.Nota3}" );
+            WriteLine( $"Média = {estudante.Media((estudante.Nota1 + estudante.Nota2 + estudante.Nota3)):f2}" );
             
             Console.WriteLine("Hello World!");
         }
