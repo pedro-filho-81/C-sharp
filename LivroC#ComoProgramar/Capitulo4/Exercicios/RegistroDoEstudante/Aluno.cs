@@ -79,5 +79,10 @@ class Aluno
     {
         return total / 3;
     } // fim media
+
+    public decimal Percentual( decimal total )
+    {
+        return total * 100 / 300;
+    } // fim percentual
     
 } // fim classe
