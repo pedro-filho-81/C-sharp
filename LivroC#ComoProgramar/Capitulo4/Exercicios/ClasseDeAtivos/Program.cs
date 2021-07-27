@@ -37,10 +37,9 @@ namespace ClasseDeAtivos
             WriteLine($"Valor depreciado: {valorDepreciado:c}");
             WriteLine($"Acrescimo ao valor depreciado: 5%");
             WriteLine($"Valor depreciado com acrescimo: {acrescimo:c}");
+            Write("Aperte qualquer tecla para encerrar: ");
+            ReadKey(); // pausa
 
-            
-            // mostrar resultado
-            Console.WriteLine("Hello World!");
         } // fim main
     } // fim classe
 } // fim name
