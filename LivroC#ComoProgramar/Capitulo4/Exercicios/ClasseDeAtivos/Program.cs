@@ -22,17 +22,26 @@ namespace ClasseDeAtivos
             // limpa a tela
             Clear();
 
+            // cria variáveis
+            decimal ativo = 5000m;
+            decimal taxa = 5;
+            
             // cria o objeto da classe Ativo
-            Ativo meuAtivo = new Ativo( "Pedro", 5000, 5 );
-
-            // calcular depreciação
-            decimal depreciacaoAnual = meuAtivo.CalcularDepreciacao(5000, 5);
+            Ativo meuAtivo = new Ativo( "Pedro", ativo, taxa );
+            decimal depreciacaoAnual = meuAtivo.CalcularDepreciacao(ativo, taxa);
             decimal depreciacaoMensal = depreciacaoAnual / 12;
             
-
             // mostrar resultado
+            WriteLine($"Nome: {meuAtivo.NomeDoAtivo}");
+            WriteLine($"Valor do ativo {ativo:c}");
+            WriteLine($"Taxa de depreciação {taxa}%");
             WriteLine($"Valor da depreciação anual = {depreciacaoAnual:c}" );
             WriteLine($"Valor da depriação mensal = {depreciacaoMensal:c}" );
+
+            ativo = 2000m;
+            taxa = 2.5m;
+            // 2º objeto da classe Ativo
+            Ativo meuAtivo2 = new Ativo( "Maria", ativo, taxa );
 
             Console.WriteLine("Hello World!");
         } // fim main
