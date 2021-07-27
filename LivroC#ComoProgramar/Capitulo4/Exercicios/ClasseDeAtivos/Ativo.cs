@@ -14,8 +14,8 @@ class Ativo
     public Ativo( string nome, decimal valor, decimal taxa )
     {
         NomeDoAtivo = nome;
-        valorDoAtivo = valor;
-        taxaDeDepreciacao = taxa;
+        ValorDoAtivo = valor;
+        TaxaDaDepreciacao = taxa;
     } // fim construtor
 
     public decimal TaxaDaDepreciacao
@@ -30,6 +30,7 @@ class Ativo
             {
                 taxaDeDepreciacao = value;
             } // fim if
+            
         } // fim set
     } // fim propriedade
 
@@ -51,7 +52,10 @@ class Ativo
     // método
     public decimal CalcularDepreciacao( decimal valor, decimal taxa)
     {
-        return valor / taxa;
+        // calcular taxa
+        taxa = taxa * valor / 100;
+        // retorna a taxa
+        return taxa;
     } // fim método
 
 } // fim classe
