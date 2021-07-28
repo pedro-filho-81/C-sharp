@@ -7,7 +7,7 @@ class Coaching
     private decimal encargos;
 
     // cria propriedades
-    public string NomeDoTreinados { get; set; }
+    public string NomeDoTreinador { get; set; }
     public string Tempos { get; set; }
     public int Jogadores { get; set; }
     
@@ -28,7 +28,7 @@ class Coaching
 
     public Coaching( string nome, int jogadores, string tempos, decimal encargos )
     {
-        NomeCoaching = nome;
+        NomeDoTreinador = nome;
         Jogadores = jogadores;
         Tempos = tempos;
         Encargos = encargos;
