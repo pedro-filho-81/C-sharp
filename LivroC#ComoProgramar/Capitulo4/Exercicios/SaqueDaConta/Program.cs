@@ -76,7 +76,8 @@ namespace SaqueDaConta
             // mostra conta 
             WriteLine($"{minhaConta1.NomeDaConta} Saque {valorDoSaque:C} Saldo {minhaConta1.Saldo:C}\n");
             
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Precione qualquer tecla para terminar.");
+            ReadKey(); // pausa o programa
         } // fim main
     } // fim classe
 } // fim namespace

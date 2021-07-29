@@ -51,7 +51,8 @@ namespace RemovendoCodigo
 
             MostrarSaldo( minhaConta2 );
             
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Precione qualquer tecla para terminar.");
+            ReadKey(); // pausa o programa
         } // fim main
 
         // cria o método mostrar saldo

@@ -34,6 +34,8 @@ namespace ClasseData
             minhaData.MostraData();
             minhaData1.MostraData();
             
+            Console.WriteLine("Precione qualquer tecla para terminar.");
+            ReadKey(); // pausa o programa
         } // fim main
     } // fim classe
 } // fim namespace

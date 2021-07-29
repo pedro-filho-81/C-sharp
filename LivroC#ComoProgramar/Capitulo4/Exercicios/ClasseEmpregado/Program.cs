@@ -38,7 +38,8 @@ namespace ClasseEmpregado
                         $"\nSalário inicial {funcionario2.SalarioMensal:C}" +
                         $"\nSalário an // ual {funcionario2.SalarioAnual(900m):C}");
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Precione qualquer tecla para terminar.");
+            ReadKey(); // pausa o programa
         } // fim main
     } // fim classe
 } // fim namespace

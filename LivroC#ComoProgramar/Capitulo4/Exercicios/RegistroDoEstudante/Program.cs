@@ -42,8 +42,8 @@ namespace RegistroDoEstudante
             WriteLine( $"Média = {estudante.Media((estudante.Nota1 + estudante.Nota2 + estudante.Nota3)):f2}" );
             WriteLine($"Acertos = {estudante.Percentual((estudante.Nota1 + estudante.Nota2 + estudante.Nota3)):f2}%" );
 
-            
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+            Console.WriteLine("Precione qualquer tecla para terminar.");
+            ReadKey(); // pausa o programa
+        } // fim main
+    } // fim classe
+} // fim name

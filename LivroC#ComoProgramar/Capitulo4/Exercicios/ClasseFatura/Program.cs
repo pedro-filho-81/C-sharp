@@ -45,7 +45,8 @@ namespace classeFatura
                     $"\nQuantidade: {quantidade}\nValor: {minhaFatura.Preco:C}" +
                     $"\nTotal a pagar: {totalDasVendas:C}");
 
-            Console.WriteLine("\nHello World C#!");
+            Console.WriteLine("Precione qualquer tecla para terminar.");
+            ReadKey(); // pausa o programa
         } // fim main
     } // fim classe
 } // fim namespace
