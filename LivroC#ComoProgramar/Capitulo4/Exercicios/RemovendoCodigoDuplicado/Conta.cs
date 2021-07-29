@@ -39,8 +39,19 @@ class Conta
     // cria método Depósito
     public decimal Deposito( decimal valorDoDeposito )
     {
-        // saldo recebe o valor do depósito
-        saldo += valorDoDeposito;
+        // se valor do depósito maior que 0.0
+        if( valorDoDeposito > 0.0m )
+        {
+            // saldo recebe o valor do depósito
+            saldo += valorDoDeposito;
+        } // fim if
+        // se valor do depósito menor ou igual a 0.0
+        if( valorDoDeposito <= 0.0m )
+        {
+            valorDoDeposito = 0.0m;
+            return valorDoDeposito;
+
+        } // fim if
 
         return saldo;
     } // fim do método

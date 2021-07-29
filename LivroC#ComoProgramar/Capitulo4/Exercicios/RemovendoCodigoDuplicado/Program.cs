@@ -36,8 +36,38 @@ namespace RemovendoCodigoDuplicado
         {
             // limpa a tela
             Clear();
-            
+
+            // cria o objeto minhaConta para classe Conta
+            Conta minhaConta = new Conta();
+
+            // entrada de dados
+            Write( "Digite o nome da conta: ");
+            string nomeParaConta = ReadLine();
+            // chama método ExibirConta e atribui o nome para conta
+            minhaConta.Nome = nomeParaConta;
+
+            Write( "Digite o valor do saldo: R$" );
+            // cria variável para o saldoDaConta que recebe o valor do usuário
+            decimal saldoDaConta = decimal.Parse(ReadLine());
+            // chama o objeto minhaConta.Saldo que recebe o valor digitado
+            minhaConta.Saldo = saldoDaConta;
+
+            Write("Digite o valor do depósito R$" );
+            decimal valorParaDeposito = decimal.Parse(ReadLine());
+            minhaConta.Deposito(valorParaDeposito );
+
+            // chama o método exibir conta
+            ExibirConta( minhaConta );
+
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+
+        // cria método ExibirConta
+        static void ExibirConta( Conta minhaConta )
+        {
+            WriteLine($"A conta de {minhaConta.Nome} com saldo de {minhaConta.Saldo:C} " + 
+                        $"\nrecebeu um depósito de {minhaConta.Saldo:C}");
+        } // fim método exibir conta
+
+    } // fim classe
+} // fim name
