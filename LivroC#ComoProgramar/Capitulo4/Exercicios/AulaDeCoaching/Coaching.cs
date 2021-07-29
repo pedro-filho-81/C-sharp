@@ -42,6 +42,7 @@ class Coaching
                     $"\nJogadores: {Jogadores}" +
                     $"\nTempo: {Tempos}" +
                     $"\nEncarcos: {Encargos:c}");
+        WriteLine(); // pula uma linha
     } // fim dysplay
 
 } // fim classe

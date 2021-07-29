@@ -28,16 +28,13 @@ namespace AulaDeCoaching
 
             // cham o método dysplay
             meuTreino.DisplayDetails();
-            WriteLine();
-            
 
             // cria objeto 2 da classe Coaching
             Coaching meuTreino1 = new Coaching("Maria",5, "3 ", 52 );
             meuTreino1.DisplayDetails();
-
             
-            Console.WriteLine("Precione uma tecla para terminar.");
+            Console.WriteLine("Precione qualquer tecla para terminar.");
             ReadKey(); // pausa o programa
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fim name
