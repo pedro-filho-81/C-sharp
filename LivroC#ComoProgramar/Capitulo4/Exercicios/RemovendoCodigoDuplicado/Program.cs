@@ -42,21 +42,34 @@ namespace RemovendoCodigoDuplicado
 
             // entrada de dados
             Write( "Digite o nome da conta: ");
+            // o usuário deve digitar o que se pede
             string nomeParaConta = ReadLine();
-            // chama método ExibirConta e atribui o nome para conta
+            // o objeto da classe minhaConta atribui a string digitada a propriedade Nome
             minhaConta.Nome = nomeParaConta;
 
             Write( "Digite o valor do saldo: R$" );
             // cria variável para o saldoDaConta que recebe o valor do usuário
             decimal saldoDaConta = decimal.Parse(ReadLine());
             // chama o objeto minhaConta.Saldo que recebe o valor digitado
-            minhaConta.Saldo = saldoDaConta;
+            minhaConta.SaldoDaConta = saldoDaConta;
 
             Write("Digite o valor do depósito R$" );
             decimal valorParaDeposito = decimal.Parse(ReadLine());
-            minhaConta.Deposito(valorParaDeposito );
+            // se o valor digitado for maior que zero
+            if( valorParaDeposito > 0.0m )
+            {
+                // o objeto da classe Conta atribui o valor a propriedade ValorDoDeposito
+                minhaConta.ValorDoDeposito = valorParaDeposito;
+            } // fim if
 
-            // chama o método exibir conta
+            Write("Digite o valor do saque R$" );
+            decimal valorParaSaque = decimal.Parse(ReadLine());
+            if( valorParaSaque > 0.0m )
+            {
+                minhaConta.ValorDoSaque = valorParaSaque;
+            } // fim if
+
+            // chama o método exibir conta que recebe o objeto da classe Conta => minhaConta
             ExibirConta( minhaConta );
 
             Console.WriteLine("Hello World!");
@@ -65,8 +78,16 @@ namespace RemovendoCodigoDuplicado
         // cria método ExibirConta
         static void ExibirConta( Conta minhaConta )
         {
-            WriteLine($"A conta de {minhaConta.Nome} com saldo de {minhaConta.Saldo:C} " + 
-                        $"\nrecebeu um depósito de {minhaConta.Saldo:C}");
+            // variáveis
+            decimal saldoInicial = minhaConta.SaldoDaConta - minhaConta.ValorDoDeposito + minhaConta.ValorDoSaque;
+
+            WriteLine("\nEXTRATO PARA SIMPLES CONFERÊNCIA");
+            WriteLine($"A conta {minhaConta.Nome}" +
+                        $"\nSaldo inicial {saldoInicial:C}" +
+                        $"\nrecebeu um depósito no valor de {minhaConta.ValorDoDeposito:C} " +
+                        $"\nSaldo atual {saldoInicial + minhaConta.ValorDoDeposito:C}" +
+                        $"\nteve um saque no valor de {minhaConta.ValorDoSaque:C}" +
+                        $"\nSaldo atual {minhaConta.SaldoDaConta:C}" );
         } // fim método exibir conta
 
     } // fim classe

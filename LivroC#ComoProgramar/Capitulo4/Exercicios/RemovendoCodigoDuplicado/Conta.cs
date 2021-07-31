@@ -4,71 +4,84 @@ using static System.Console;
 class Conta
 {
     // cria variáveis de instância
-    private string nomeDaConta;
-    private decimal saldo;
+    private string nomeDaConta; // nome do titular da conta
+    private decimal valorDoDeposito;
+    private decimal valorDoSaque;
+    private decimal saldoDaConta;
 
     // cria a propriedade Nome
     public string Nome
     {
         get
         {
+            // retorna o nome do titular da conta
             return nomeDaConta;
         } // fim get
         set
         {
+            // a variável de instância recebo o nome do titular da conta
             nomeDaConta = value;
         } // fim set
     } // fim propriedade Nome
 
-    // cria a propriedade Saldo
-    public decimal Saldo
+    // cria a propriedade Saldo da conta
+    public decimal SaldoDaConta
     {
         get
         {
-            return saldo;
+            return saldoDaConta;
         } // fim get
         set
         {
+            // se o valor digitado for maior que zero
             if( value > 0.0m )
             {
-                saldo += value;
+                // o saldo da conta recebe o valor
+                saldoDaConta += value;
             } // fim if
         } // fim set
     } // fim propriedade
 
-    // cria método Depósito
-    public decimal Deposito( decimal valorDoDeposito )
+    public decimal ValorDoDeposito
     {
-        // se valor do depósito maior que 0.0
-        if( valorDoDeposito > 0.0m )
+        get
         {
-            // saldo recebe o valor do depósito
-            saldo += valorDoDeposito;
-        } // fim if
-        // se valor do depósito menor ou igual a 0.0
-        if( valorDoDeposito <= 0.0m )
-        {
-            valorDoDeposito = 0.0m;
             return valorDoDeposito;
-
-        } // fim if
-
-        return saldo;
-    } // fim do método
-
-    // cria o método Saque
-    public decimal Saque( decimal valorDoSaque )
-    {
-        // se o saldo maior ou igual ao valor do saque
-        if( saldo > valorDoSaque )
+        } // fim get
+        set
         {
-            // saldo recebe o valor do saque
-            saldo -= valorDoSaque;
-        } // fim if
-        
-        // retorne o saldo
-        return saldo;
+            // se o valor digitado for maior que zero
+            if( value > 0.0m )
+            {
+                // a variável de instância da classe recebe o valor
+                valorDoDeposito = value;
+                // e o saldo da conta recebe o valor do depósito
+                saldoDaConta += valorDoDeposito;
+            } // fim if
+        } // fim set
+    } // fim propriedade
 
-    } // fim do método
+    public decimal ValorDoSaque
+    {
+        get
+        {
+            return valorDoSaque;
+        } // fim get
+        set
+        {
+            // se o valor do saque for maior que zero
+            if( value > 0.0m )
+            {
+                // e se o valor digitado for menor ou igual ao saldo da conta
+                if( value <= saldoDaConta )
+                {
+                    // o valor do saque recebe o valor
+                    valorDoSaque = value;
+                    // e o saldo da conta e diminuido do valor do saque
+                    saldoDaConta -= valorDoSaque;
+                } // fim if interno
+            } // fim if externo
+        } // fim set
+    } // fim propriedade
 
 } // fim classe conta
