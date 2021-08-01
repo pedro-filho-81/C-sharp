@@ -48,6 +48,7 @@ namespace ClasseMedia2
             {
                 WriteLine("Não houve lançamento de notas." );
             } // fim else
+            
         } // fim main
     } // fim classe
 } // fim namespace
