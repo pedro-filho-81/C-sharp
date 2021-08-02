@@ -8,7 +8,7 @@ class Credito
     private int jurosGanhos;
     private int taxaDeJuros;
     private int tempoAplicado;
-    private int numeroDaConta;
+    public int numeroDaConta;
     private int valorFinal;
 
     // cria o construtor
@@ -98,5 +98,15 @@ class Credito
             } // fim if
         } // fim set
     } // fim propriedade
+
+    // cria método JurosGanhos
+    public decimal Juros( int valorInicial, int taxaDeJuros, int tempoAplicado )
+    {
+        decimal calculoDosJuros = taxaDeJuros / 100; 
+        decimal juros = valorInicial * calculoDosJuros;
+
+        // retorne juros
+        return juros;
+    } // fim método JurosGanhos
 
 } // fim da classe
