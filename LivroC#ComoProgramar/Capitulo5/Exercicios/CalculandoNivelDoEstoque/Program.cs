@@ -35,7 +35,6 @@ namespace CalculandoNivelDoEstoque
             int quantidadeComprada;
             int quantidadeVendida;
             int saldoDoEstoque = 0;
-            int alertaDoEstoque = 0;
             int quantidadeDeAlerta = 0;
 
             // entrada de dados
@@ -63,7 +62,14 @@ namespace CalculandoNivelDoEstoque
                             $"\nEstoque inicial [{quantidadeNoEstoque}]" +
                             $"\nQuantidade comprada {quantidadeComprada}\nQuantidade vendida {quantidadeVendida}" +
                             $"\nResta no estoque [{saldoDoEstoque}]" + 
-                            $"\nQuantidade de alerta {quantidadeDeAlerta}%");
+                            $"\nVocê tem {quantidadeDeAlerta / 10}% do estoque inicial.");
+                
+                // se a quantidade de alerta menor ou igual a 1%
+                if( quantidadeDeAlerta <= 10 )
+                {
+                    // imprima um alerta
+                    WriteLine("Adquira mais unidades imediatamente.");
+                } // fim if
 
                 // entrada de dados
                 Write("\nDigite o código do item (-1 = Sair): ");
