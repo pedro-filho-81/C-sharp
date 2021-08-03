@@ -29,7 +29,48 @@ namespace CalculandoNivelDoEstoque
             // limpa a tela
             Clear();
             
+            // variáveis
+            int codigoDoProduto;
+            int quantidadeNoEstoque;
+            int quantidadeComprada;
+            int quantidadeVendida;
+            int saldoDoEstoque = 0;
+            int alertaDoEstoque = 0;
+            int quantidadeDeAlerta = 0;
+
+            // entrada de dados
+            Write("Digite o código do item (-1 = Sair): ");
+            codigoDoProduto = int.Parse(ReadLine());
+
+            // enquando código do item diferente de -1
+            while (codigoDoProduto != -1 )
+            {
+                Write("Digite a quantidade no estoque: " );
+                quantidadeNoEstoque = int.Parse(ReadLine());
+
+                Write("Digite a quantidade comprada: ");
+                quantidadeComprada = int.Parse(ReadLine());
+
+                Write("Digite a quantidade vendida: ");
+                quantidadeVendida = int.Parse(ReadLine());
+
+                // calcular
+                saldoDoEstoque = (quantidadeNoEstoque + quantidadeComprada ) - quantidadeVendida;
+                quantidadeDeAlerta = ( saldoDoEstoque * 100 ) / quantidadeNoEstoque;
+                
+                // mostrando resultado
+                WriteLine($"\nO produto {codigoDoProduto}" +
+                            $"\nEstoque inicial [{quantidadeNoEstoque}]" +
+                            $"\nQuantidade comprada {quantidadeComprada}\nQuantidade vendida {quantidadeVendida}" +
+                            $"\nResta no estoque [{saldoDoEstoque}]" + 
+                            $"\nQuantidade de alerta {quantidadeDeAlerta}%");
+
+                // entrada de dados
+                Write("\nDigite o código do item (-1 = Sair): ");
+                codigoDoProduto = int.Parse(ReadLine());
+            } // fim while
+
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fim name
