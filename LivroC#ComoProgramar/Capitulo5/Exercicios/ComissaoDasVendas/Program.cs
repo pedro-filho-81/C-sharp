@@ -38,6 +38,7 @@ namespace ComissaoDasVendas
             int coluna = 1;
             int vendas;
             decimal totalDasVendas = 0;
+            int quantidade = 0;
 
             // CABEÇALHO
             WriteLine("COMISSÃO DAS VENDAS");
@@ -51,18 +52,47 @@ namespace ComissaoDasVendas
             WriteLine("4\tR$350,89");
             WriteLine("*******************");
 
-            // enquanto
-            while ( linha <= 4 )
-            {
-                while( coluna <= 4 )
-                {
-                            
-                    // ENTRADA DE DADOS
-                    WriteLine($"Vendedor {linha} produto {coluna} vendeu {quantidade}");
-                }
-            }
+            // entrada de dados
+            Write("Digite o codigo do vendedor: ");
+            int codigoDoVendedor = int.Parse(ReadLine());
 
+            Write("Digite o produto vendido (1, 2, 3, 4): ");
+            int produto = int.Parse(ReadLine());
+
+            Write("Quantos produtos vendeu?");
+            int quantidadeVendida = int.Parse(ReadLine());
+
+            switch (produto)
+            {
+                case 1:
+                    quantidade += quantidadeVendida;
+                    totalDasVendas =  (decimal) (quantidadeVendida * 239.99m);
+                    break;
+
+                case 2:
+                    quantidade += quantidadeVendida;
+                    totalDasVendas =  (decimal)  (quantidadeVendida * 129.75m);
+                    break;
+
+                case 3:
+                    quantidade += quantidadeVendida;
+                    totalDasVendas =   (decimal) (quantidadeVendida * 99.95m);
+                    break;
+
+                case 4:
+                    quantidade += quantidadeVendida;
+                    totalDasVendas =  (decimal)  (quantidadeVendida * 350.89m);
+                    break;
+
+                default:
+                    totalDasVendas += 0m;
+                    break;
+            } // fim  switch
+
+            // mostra resultado
+            WriteLine($"O vendedor {codigoDoVendedor} vendeu {quantidade} produto(s)" +
+                        $"\nRecebeu de salário {200 + (totalDasVendas * )}");
             Console.WriteLine("Hello World!");
-        }
-    }
-}
+        } // fim main
+    } // fim classe
+} // fim name
