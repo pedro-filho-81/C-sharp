@@ -89,6 +89,9 @@ namespace ComissaoDasVendas
                     break;
             } // fim  switch
 
+            // calcular a comissão
+            decimal comissao = // falta calcular a comissão
+            
             // mostra resultado
             WriteLine($"O vendedor {codigoDoVendedor} vendeu {quantidade} produto(s)" +
                         $"\nRecebeu de salário {200 + (totalDasVendas * )}");
