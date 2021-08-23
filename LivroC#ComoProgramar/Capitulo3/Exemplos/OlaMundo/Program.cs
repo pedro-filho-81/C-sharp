@@ -1,4 +1,6 @@
-﻿using System;
+﻿// biblioteca
+using System; // diretiva para o compilador
+
 
 namespace OlaMundo // 
 {
